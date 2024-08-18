@@ -1,0 +1,275 @@
+.wp-section01 {
+    flex-direction: row-reverse;
+}
+
+.content-img {
+    width: 30%;
+    margin: auto;
+    margin-bottom: -20px;
+}
+
+.title-section {
+    padding: 10px 0px 20px;
+    max-width: 1200px;
+}
+
+.content-info p {
+    font-size: 22px;
+    line-height: 1.3;
+}
+
+.history {
+    padding: 0px;
+}
+
+.history .title {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+    padding: 0px;
+}
+
+.history .thumbnail {
+    width: 60px;
+    height: auto;
+}
+
+.history .title .wp-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.history .title .wp-text span {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.history .title .wp-text .hightline {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.wp-history-ct {
+    display: flex;
+    justify-content: space-around;
+    gap: 3%;
+}
+
+.wp-history-ct .history-ct-left {
+    width: 65%;
+}
+
+.wp-history-ct .history-ct-right {
+    width: 32%;
+    display: flex;
+    justify-content: center;
+}
+
+.history-item {
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.line-history {
+    width: 3px;
+    background-color: #000;
+    position: relative;
+    margin-left: 28px;
+}
+
+.icon-history {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 153 0 / var(--tw-bg-opacity));
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    position: absolute;
+    top: 20px;
+    left: -11px;
+}
+
+.history-content {
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.history-content .year {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.history-content .title {
+    font-size: 22px;
+    font-weight: 700;
+    padding: 5px 0px;
+    color: #fff;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.history-content .text {
+    font-size: 22px;
+    line-height: 1.3;
+    text-align: justify;
+}
+
+
+.wp-history-ct .history-ct-right img {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 0px;
+}
+
+.career-ds-jun88 p {
+    color: #fff;
+    padding: 15px 0px 10px;
+    font-size: 22px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 1200px) {
+    .header2 .logo-daisu img {
+        max-width: 230px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .jun88-event .thumbnail {
+        width: 50px;
+        height: 47px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wp-section01 {
+        flex-direction: column !important;
+        display: flex;
+    }
+
+    .wp-section01 .content-info {
+        width: 100%;
+        font-size: 3vw;
+    }
+
+    .wp-section01 .content-info p {
+        font-size: 3.5vw;
+    }
+
+    .content-img {
+        width: 100%;
+        margin-top: -5px;
+    }
+
+    .career-ds-jun88 {
+        background-size: cover;
+    }
+
+    .career-ds-jun88 .title {
+        font-size: 20px !important;
+    }
+
+    .career-ds-jun88 .title span {
+        font-size: 30px !important;
+    }
+
+    .cup-item h3 {
+        font-size: 14px;
+        height: 50px;
+    }
+
+    .wp-history-ct {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .wp-history-ct .history-ct-left {
+        width: 100%;
+    }
+
+    .wp-history-ct .history-ct-right {
+        width: 100%;
+    }
+
+    .history .title .wp-text span {
+        font-size: 4vw;
+    }
+
+    .history .title .wp-text .hightline {
+        font-size: 5vw;
+    }
+
+    .history-content .year {
+        font-size: 4vw;
+    }
+
+    .history-content .title {
+        font-size: 4vw;
+    }
+
+    .history-content .text {
+        font-size: 3vw;
+    }
+
+    .history-content {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .line-history {
+        margin-left: 22px;
+    }
+}
+
+.video video {
+    border-radius: 0px;
+    border: unset;
+}
+
+@media screen and (max-width: 1024px) {
+    .jun88-event .thumbnail {
+        width: 50px;
+        height: 47px;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .slider-event {
+        padding-top: 8px;
+    }
+
+    .btn-link {
+        padding-top: 0px;
+    }
+
+    .career-ds-jun88 .content .number.last {
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+
+    .wp-section02 .content-img img {
+        padding-top: 0px;
+    }
+
+    .thumb-signature {
+        max-width: 200px;
+    }
+
+    .wp-logo-footer {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .slider-list .list-item {
+        height: 38vw;
+    }
+}

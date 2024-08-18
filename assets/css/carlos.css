@@ -1,0 +1,32 @@
+@media screen and (max-width: 1024px) {
+    .jun88-event .thumbnail {
+        width: 50px;
+        height: 47px;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .career-ds-jun88 .content .number.last {
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+
+    .wp-section01 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wp-section01 .content-info,
+    .wp-section01 .content-img {
+        width: 100%;
+    }
+
+    .wp-section02 .content-img img {
+        padding-top: 0px;
+    }
+
+    .career-ds-jun88 .content .number {
+        padding-top: 10px;
+    }
+}

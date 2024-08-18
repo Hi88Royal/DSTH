@@ -1,0 +1,364 @@
+.wp-section01 {
+  flex-direction: row-reverse;
+}
+
+.title-section .title-first {
+  font-size: 30px;
+  padding: 20px 10px;
+}
+
+.history {
+  padding: 50px 0px;
+}
+
+.history .title {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
+  padding: 0px 0px 10px;
+}
+
+.history .thumbnail {
+  width: 60px;
+  height: auto;
+}
+
+.history .title .wp-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.history .title .wp-text span {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.history .title .wp-text .hightline {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.wp-history-ct {
+  display: flex;
+  justify-content: space-around;
+}
+
+.wp-history-ct .history-ct-left {
+  width: 50%;
+}
+
+.wp-history-ct .history-ct-right {
+  width: 50%;
+}
+
+.history-item {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.line-history {
+  width: 3px;
+  background-color: #000;
+  position: relative;
+  margin-left: 28px;
+}
+
+.icon-history {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    --tw-bg-opacity: 1;
+    background-color: #26a7df;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    position: absolute;
+    top: 20px;
+    left: -11px;
+}
+
+.history-content {
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+.history-content .year {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.history-content .title {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px 0px;
+}
+
+.history-content .text {
+  font-size: 16px;
+}
+
+/* Team member */
+.team-member .title {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  padding: 0px 0px 10px;
+}
+
+.team-member .thumbnail {
+  width: 60px;
+  height: auto;
+}
+
+.team-member .title .wp-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: auto;
+}
+
+.team-member .title .wp-text span {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.team-member .title .wp-text .hightline {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.list-member-team {
+  padding-top: 50px;
+}
+
+.list-member-team .item-member {
+  width: 100px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.list-member-team .thumbnail {
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.list-member-team .wp-text {
+  position: absolute;
+  bottom: 10px;
+  background-color: rgba(243, 244, 246, 0.8);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  max-width: 200px;
+  height: 100px;
+  right: 0px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.list-member-team .wp-text .number-team {
+  font-size: 25px;
+  color: #000;
+  font-weight: 700;
+  text-align: center;
+}
+
+.list-member-team .wp-text .name {
+  font-size: 18px;
+  color: #000;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+.career-ds-hi88 .content .title {
+
+  color: #fff;
+  text-align: center;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+.career-ds-hi88 {
+  padding: 60px 0px 50px;
+  background-image: url(./../images/webp/bg-section.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.career-ds-hi88 {
+  background-image: url(./../images/banner-okvip.jpg) !important;
+}
+
+.career-ds-hi88 .title {
+  font-size: 25px !important;
+  line-height: 1.5;
+}
+
+.career-ds-hi88 .title span {
+  font-size: 45px !important;
+  color: #fff;
+}
+
+.cup-item h3 {
+  font-size: 18px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-cups .slick-slide,
+.list-cups .slick-slide {
+  margin: 0 10px !important;
+}
+
+.cup-item h3 {
+  font-size: 18px;
+}
+
+#divi-video-container {
+  width: 79.53%;
+}
+
+.content-info {
+  width: 100%;
+}
+
+.img-icon {
+  margin-top: 10%;
+}
+
+.video video {
+  border-radius: 0px;
+  border: unset;
+}
+
+@media screen and (max-width: 1199px) {
+  .header2 .logo-daisu img {
+    max-width: 230px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .jun88-event .thumbnail {
+    width: 50px;
+    height: 47px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .b-content {
+    padding-top: 50px;
+  }
+
+  .list-member-team .wp-text .name {
+    font-size: 16px;
+  }
+
+  .title-section .title-first {
+    font-size: 3.5vw;
+    padding: 20px 10px;
+  }
+
+  #divi-video-container {
+    width: 100%;
+    margin: auto;
+  }
+
+  .slider-list .list-item {
+    height: 35vw;
+  }
+
+  .wp-section01 {
+    flex-direction: column;
+    display: flex;
+  }
+
+  .section-info-okvip .content-info {
+    width: 100%;
+  }
+
+  .section-info-okvip .content-img {
+    width: 100%;
+  }
+
+  .career-ds-hi88 {
+    background-size: cover;
+  }
+
+  .career-ds-hi88 .title {
+    font-size: 20px !important;
+  }
+
+  .career-ds-hi88 .title span {
+    font-size: 30px !important;
+  }
+
+  .cup-item h3 {
+    font-size: 14px;
+    height: 50px;
+  }
+
+  .wp-history-ct {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .wp-history-ct .history-ct-left {
+    width: 100%;
+  }
+
+  .wp-history-ct .history-ct-right {
+    width: 100%;
+  }
+
+  .history .title .wp-text span {
+    font-size: 4vw;
+  }
+
+  .history .title .wp-text .hightline {
+    font-size: 5vw;
+  }
+
+  .history-content .year {
+    font-size: 4vw;
+  }
+
+  .history-content .title {
+    font-size: 4vw;
+  }
+
+  .history-content .text {
+    font-size: 3vw;
+  }
+
+  .history-content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .line-history {
+    margin-left: 22px;
+  }
+
+  .team-member .title .wp-text span {
+    font-size: 4vw;
+  }
+
+  .team-member .title .wp-text .hightline {
+    font-size: 5vw;
+  }
+
+  .team-member .title .thumbnail {
+    width: 45px;
+    height: auto;
+  }
+}

@@ -1,0 +1,520 @@
+*,
+body {
+    font-size: 16px;
+    position: relative;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    line-height: 1.7;
+    letter-spacing: 1.5;
+    color: #fff;
+    font-family: Mulish, sans-serif;
+}
+
+body {
+    cursor: pointer;
+    height: 100% !important;
+    position: relative;
+    width: 100% !important;
+    overflow: hidden !important;
+    display: block;
+    object-fit: cover;
+}
+
+.dp-sp {
+    display: none;
+}
+
+.wp-wapper {
+    background-image: url(./../images/webp/bg-pc-wp-2.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh !important;
+    background-size: 100% 100vh;
+    position: relative;
+}
+
+.slick-vertical .slick-slide {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.site-bar {
+    height: 90vh;
+    left: 20px;
+    top: 0px;
+    bottom: 0px;
+    width: 450px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0px;
+    position: fixed;
+    left: 0px;
+    top: calc((100% + 0px) / 2);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 9999;
+    padding: 10px 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-image: url(./../images/bg-sidebar.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.logo-top {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin: 50px auto 30px;
+    -webkit-animation: drift 2s infinite alternate;
+    animation: drift 2s infinite alternate;
+}
+
+@-webkit-keyframes drift {
+    to {
+        -webkit-transform: translateY(-10%);
+        transform: translateY(-10%)
+    }
+}
+
+@keyframes drift {
+    to {
+        -webkit-transform: translateY(-10%);
+        transform: translateY(-10%)
+    }
+}
+
+.box-title {
+    background-image: url(./../images/bg-title.png);
+    width: 100%;
+    height: auto;
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px 70px 20px 30px;
+    position: relative;
+    font-family: Mulish, sans-serif;
+}
+
+.box-list {
+    min-height: 40vh;
+}
+
+.box-title::before {
+    content: "";
+    position: absolute;
+    top: 42%;
+    right: 30px;
+    background-image: url(./../images/btn-icon-down.png);
+    width: 20px;
+    height: 10px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+.box-title .title {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Mulish, sans-serif;
+}
+
+.box-title .text {
+    font-size: 20px;
+    text-align: center;
+    display: block;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.list-ds {
+    background-color: #cef2ff;
+    width: 93%;
+    margin: 0px auto;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    /* padding: 0px 30px 10px 30px; */
+}
+
+.list-ds .name {
+    width: 50%;
+}
+
+.item-ds {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.item-ds {
+    border-top: 1px dotted #0573a5;
+    transition: 0.4s ease-in-out;
+}
+
+.item-ds:first-child {
+    border-top: none !important;
+}
+
+.item-ds:last-child {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.item-ds .icon-ds {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.item-ds:hover {
+    background-color: #25A9DF;
+}
+
+.item-ds .icon-ds img {
+    width: 100%;
+    height: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+.list-ds .sign-icon {
+    width: 100px;
+    padding-top: 5px;
+    height: auto;
+}
+
+.item-ds .name span {
+    color: #0573a5;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: unset;
+    font-family: Mulish, sans-serif;
+}
+
+.list-ds-sm .name span {
+    font-size: 18px;
+    line-height: 1;
+    display: inline-block;
+}
+
+.item-ds:hover .name span {
+    color: #fff;
+}
+
+.box-list-group .item-ds {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.box-list-group .item-ds .icon-ds {
+    display: flex;
+    max-width: 152px;
+    width: 100%;
+    justify-content: space-between;
+    height: auto;
+}
+
+.box-list-group .item-ds .icon-ds .logo-club {
+    max-width: 40px;
+    width: 100%;
+    padding-right: 10px;
+    height: 35px;
+    border-right: 1px solid #0573a5;
+}
+
+.box-list-group .item-ds .icon-ds .logo-group {
+    max-width: 113px;
+    width: 100%;
+    height: 35px;
+    padding-left: 10px;
+}
+
+.box-list-group .item-ds .name span {
+    color: #000;
+}
+
+.box-list-group .item-ds:hover .name span {
+    color: #fff;
+}
+
+.box-list-group .icon-ds img {
+    width: 140px;
+    height: 37px;
+    margin-top: 2px;
+}
+
+.box-list-center .bg-content-center {
+    display: none;
+}
+
+.bg-content-center-pc {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: calc(100% - 450px);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-content-center-pc img {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    margin-right: 0px;
+    margin-top: 50px;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .site-bar {
+        width: 380px;
+    }
+
+    .bg-content-center-pc {
+        width: calc(100% - 380px);
+    }
+
+    .logo-top {
+        margin: 30px auto 22px;
+    }
+
+    @-webkit-keyframes drift {
+        to {
+            -webkit-transform: translateY(-3%);
+            transform: translateY(-3%)
+        }
+    }
+
+    @keyframes drift {
+        to {
+            -webkit-transform: translateY(-3%);
+            transform: translateY(-3%)
+        }
+    }
+
+    .box-title .title {
+        font-size: 18px;
+    }
+
+    .box-title .text {
+        font-size: 19px;
+    }
+
+    .box-title {
+        padding: 10px 40px 10px 15px;
+    }
+
+    .item-ds {
+        padding: 8px 18px;
+    }
+
+    .item-ds .name span {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .dp-sp {
+        display: block;
+    }
+
+    .site-bar {
+        width: 100%;
+        height: 100%;
+        background-size: 100% 100%;
+        background-image: url(./../images/bg-sm-2.png);
+        border-radius: 0px;
+    }
+
+    .logo-top {
+        max-width: 180px;
+        margin: 25px auto 15px;
+    }
+
+    .bg-content-center-pc {
+        display: none;
+    }
+
+    .box-title::before {
+        content: "";
+        position: absolute;
+        top: 42%;
+        right: 12px;
+    }
+
+    .box-title .title {
+        font-size: 18px;
+    }
+
+    .box-title .text {
+        font-size: 15px;
+    }
+
+    .item-ds .icon-ds {
+        width: 40px;
+        height: 40px;
+    }
+
+    .list-ds .sign-icon {
+        padding-top: 0px;
+    }
+
+    .item-ds .icon-ds img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .box-list-group .icon-ds img {
+        width: unset;
+        height: 22px;
+    }
+
+    .box-list-group .item-ds {
+        justify-content: space-between;
+    }
+
+    .box-list-group .item-ds .icon-ds {
+        max-width: 110px;
+    }
+    
+    .box-list-group .item-ds .icon-ds .logo-club {
+        max-width: 32px;
+        width: 100%;
+        padding-right: 5px;
+        height: 30px;
+    }
+    
+    .box-list-group .item-ds .icon-ds .logo-group {
+        max-width: 75px;
+        width: 100%;
+        height: 27px;
+        padding-left: 5px;
+    }
+
+    .wp-wapper {
+        background-image: unset;
+    }
+
+    .box-list {
+        min-height: unset;
+    }
+
+    .box-list-center {
+        height: 48vh;
+        position: relative;
+        margin: 0px auto;
+    }
+
+    .box-list-center .bg-content-center {
+        position: absolute;
+        top: 22%;
+        max-width: 75%;
+        width: auto;
+        max-height: 48vh;
+        left: 13%;
+        right: 0px;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .box-list-center .bg-content-center img {
+        width: 100%;
+        height: auto;
+    }
+
+    .box-title {
+        padding: 10px 10px 10px 10px;
+    }
+
+    .box-title::before {
+        content: "";
+        position: absolute;
+        top: 42%;
+        right: 12px;
+        display: none;
+    }
+
+    .box-list-group .icon-ds img {
+        height: 30px;
+        width: 110px;
+    }
+
+    .box-title .text {
+        font-size: 15px;
+    }
+
+    .list-ds .name {
+        width: auto;
+    }
+
+    .list-ds .sign-icon {
+        width: 50px;
+    }
+
+    .list-ds-sm {
+        width: 75px;
+        margin-left: 0px;
+        border-bottom-left-radius: unset;
+        position: relative;
+        z-index: 9;
+    }
+
+    .list-ds-sm .item-ds {
+        display: flex;
+        gap: 2px;
+        align-items: center;
+        padding: 3px 2px;
+        flex-direction: column;
+    }
+
+    .list-ds-sm .item-ds .name span {
+        width: 100%;
+        text-align: center;
+        display: inline-block;
+        line-height: 1.2;
+        font-size: 12px;
+    }
+    
+    .list-ds-sm .item-ds .name span.year {
+        font-size: 9px;
+    }
+
+    .item-ds .icon-ds {
+        width: 30px;
+        height: 30px;
+    }
+
+    .item-ds .icon-ds img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .box-list-group .icon-ds img {
+        width: unset;
+        height: 22px;
+    }
+
+    .box-list-group .icon-ds img {
+        height: 28px;
+        width: 105px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .item-ds .name span {
+        font-size: 12px;
+    }
+}
