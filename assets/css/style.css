@@ -3244,3 +3244,166 @@ main {
 .lazy.loaded {
   opacity: 1;
 }
+
+/* Video overlay trong carousel với absolute positioning */
+.carousel-item .position-relative {
+  position: relative;
+  width: 100%;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 3%;
+  margin-top: -3%;
+  box-sizing: border-box;
+  
+}
+
+.video-overlay .video-container {
+  width: 100%;
+  max-width: 950px;
+  height: auto;
+}
+
+.video-overlay .video-container video {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive cho video overlay */
+@media (max-width: 1199px) {
+  .video-overlay {
+    width: 45%;
+    padding: 15px;
+  }
+  
+  .video-overlay .video-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .video-overlay {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+  
+  .video-overlay .video-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .video-overlay {
+    padding: 15px;
+  }
+}
+
+/* Section chứa 4 video nhỏ bên dưới banner */
+.video-list-section {
+  padding: 30px 0;
+  background: #fff;
+}
+
+/* Container trong section carousel chứa 4 video */
+section > .container {
+  padding: 20px 15px;
+}
+
+/* 4 video nhỏ trong carousel-item */
+.carousel-item .video-list-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  margin: 0;
+}
+
+.carousel-item .video-list-item {
+  flex: 1;
+  min-width: 0;
+  max-width: calc(25% - 15px);
+}
+
+.carousel-item .video-container-small {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.carousel-item .video-container-small video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  background: #000;
+}
+
+/* Responsive cho 4 video */
+@media (max-width: 1199px) {
+  .carousel-item .video-list-row {
+    gap: 15px;
+    padding: 25px 15px;
+  }
+  
+  .carousel-item .video-list-item {
+    max-width: calc(25% - 12px);
+  }
+}
+
+@media (max-width: 991px) {
+  .carousel-item .video-list-row {
+    gap: 12px;
+    padding: 20px 15px;
+    flex-wrap: wrap;
+  }
+  
+  .carousel-item .video-list-item {
+    flex: 0 0 calc(50% - 12px);
+    max-width: calc(50% - 12px);
+    min-width: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel-item .video-list-row {
+    gap: 10px;
+    padding: 15px 10px;
+  }
+  
+  .carousel-item .video-list-item {
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
+  
+  .carousel-item .video-container-small video {
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 575px) {
+  .carousel-item .video-list-row {
+    gap: 8px;
+    padding: 15px 8px;
+  }
+  
+  .carousel-item .video-list-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
