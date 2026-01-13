@@ -33,6 +33,125 @@
   <link rel="stylesheet" href="./assets/css/footer_new.css">
 
   <link href="./assets/css/aos.css" rel="stylesheet">
+  <style>
+    /* Fix thumbnail không tràn ra khỏi khung xanh */
+    .site-bar {
+      overflow: hidden !important;
+    }
+    .list-group .item-group {
+      overflow: hidden !important;
+    }
+    .list-group .item-group .box {
+      overflow: hidden !important;
+    }
+    .list-group .item-group .wp-thumb-nail {
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+    }
+    .list-group .item-group .wp-thumb-nail img {
+      max-width: 100% !important;
+      max-height: 100% !important;
+      object-fit: cover !important;
+    }
+    /* Responsive cho site-bar - thu nhỏ gọn hơn */
+    @media (max-width: 1199px) {
+      .site-bar {
+        width: 85px !important;
+        height: auto !important;
+        padding: 15px 6px !important;
+        min-height: fit-content !important;
+      }
+      .site-bar:before {
+        width: 50px !important;
+      }
+      .list-group {
+        gap: 6px !important;
+        padding: 8px 0px !important;
+      }
+      .list-group .item-group .wp-thumb-nail {
+        width: 45px !important;
+        height: 45px !important;
+        margin-left: -7.5px !important;
+      }
+      .list-group .item-group .wp-thumb-nail.active {
+        width: 55px !important;
+        height: 55px !important;
+        margin-left: 0 !important;
+      }
+    }
+    
+    @media (max-width: 767px) {
+      .site-bar {
+        width: 60px !important;
+        padding: 10px 3px !important;
+        left: 3px !important;
+      }
+      .site-bar:before {
+        width: 40px !important;
+      }
+      .list-group {
+        gap: 4px !important;
+        padding: 5px 0px !important;
+      }
+      .list-group .item-group .wp-thumb-nail {
+        width: 35px !important;
+        height: 35px !important;
+        margin-left: -20px !important;
+      }
+      .list-group .item-group .wp-thumb-nail.active {
+        width: 42px !important;
+        height: 42px !important;
+        margin-left: 0 !important;
+      }
+    }
+    @media (max-width: 575px) {
+      .site-bar {
+        width: 50px !important;
+        padding: 8px 2px !important;
+        left: 2px !important;
+      }
+      .site-bar:before {
+        width: 35px !important;
+      }
+      .list-group {
+        gap: 3px !important;
+        padding: 4px 0px !important;
+      }
+      .list-group .item-group .wp-thumb-nail {
+        width: 30px !important;
+        height: 30px !important;
+        margin-left: -15px !important;
+      }
+      .list-group .item-group .wp-thumb-nail.active {
+        width: 36px !important;
+        height: 36px !important;
+        margin-left: 0 !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .site-bar {
+        width: 45px !important;
+        padding: 6px 2px !important;
+        left: 2px !important;
+      }
+      .site-bar:before {
+        width: 30px !important;
+      }
+      .list-group {
+        gap: 2px !important;
+        padding: 3px 0px !important;
+      }
+      .list-group .item-group .wp-thumb-nail {
+        width: 26px !important;
+        height: 26px !important;
+      }
+      .list-group .item-group .wp-thumb-nail.active {
+        width: 32px !important;
+        height: 32px !important;
+        margin-left: 0 !important;
+      }
+    }
+  </style>
   <script src="./assets/js/jquery_3.6.0_jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
     integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
@@ -41,12 +160,32 @@
 </head>
 
 <body>
-  <!-- <div class="site-bar">
+  <div class="site-bar">
     <div class="list-group slider-top">
-      <div class="item-group handle-click" data-url="./assets/images/di-marira/angle-di-maria.png" data-status="1">
-        <a href="/" class="box">
-          <div class="wp-thumb-nail active">
-            <img data-src="./assets/images/di-marira/angle-di-maria.png">
+      <div
+        class="item-group handle-click"
+        data-url="./assets/images/roma/logositebar.png"
+        data-status="1"
+      >
+        <a href="/index-roma.html" class="box">
+          <div class="wp-thumb-nail ">
+            <img data-src="./assets/images/roma/logositebar.png" />
+          </div>
+
+          <div class="wp-title">
+            <span class="tilte">A.S. Roma</span>
+            <span>Đối tác khu vực</span>
+          </div>
+        </a>
+      </div>
+      <div
+        class="item-group handle-click"
+        data-url="./assets/images/di-marira/angle-di-maria.png"
+        data-status="1"
+      >
+        <a href="/index.html" class="box">
+          <div class="wp-thumb-nail">
+            <img data-src="./assets/images/di-marira/angle-di-maria.png" />
           </div>
 
           <div class="wp-title">
@@ -55,41 +194,25 @@
           </div>
         </a>
       </div>
+     
     </div>
 
     <div class="list-group slider-bottom">
-      <div class="item-group handle-click" data-url="./assets/images/230627_MEDIAPRO_OKVIP_highlights_0041_cut.jpg"
-        data-url-sm="./assets/images/bg-okvip-sm.jpg" data-status="2">
-        <a href="https://hi88.salon/lienminh-okvip" target="_blank" rel="nofollow" class="box">
-          <div class="wp-thumb-nail">
-            <img data-src="./assets/images/di-marira/okvip.png">
-          </div>
-
-          <div class="wp-title">
-            <span class="tilte">Liên Minh OKVIP</span>
-            <span>Đối tác thương hiệu</span>
-          </div>
-        </a>
+      <div
+            class="item-group"
+            data-url="./assets/images/clb-moi.jpg"
+            data-url-sm="./assets/images/ds-bian.jpg"
+          >
       </div>
 
-      <div class="item-group handle-click" data-url="./assets/images/club-villa.jpg"
-        data-url-sm="./assets/images/club-villa-sm.jpg" data-status="3">
-        <a href="https://hi88.salon/lienminh-okvip" class="box">
-          <div class="wp-thumb-nail">
-            <img data-src="./assets/images/di-marira/Villarreal-CF.png">
-          </div>
-
-          <div class="wp-title">
-            <span class="tilte">CLB Villarreal CF</span>
-            <span>Đối tác thương hiệu</span>
-          </div>
-        </a>
-      </div>
-
-      <div class="item-group" data-url="./assets/images/clb-moi.jpg" data-url-sm="./assets/images/ds-bian.jpg">
+      <div
+        class="item-group"
+        data-url="./assets/images/clb-moi.jpg"
+        data-url-sm="./assets/images/ds-bian.jpg"
+      >
         <div class="box">
           <div class="wp-thumb-nail">
-            <img data-src="./assets/images/di-marira/icon-ol-plus-2.png">
+            <img data-src="./assets/images/icon-ol-plus-2.png" />
           </div>
 
           <div class="wp-title">
@@ -98,7 +221,7 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 
   <header class="header2">
     <div class="logo-daisu" data-logo-status="1">
@@ -590,18 +713,20 @@
               </div>
             </div>
           </div>
-
-          <div class="right">
-            <div class="footer-endorser">
+          <div class="right" style="margin-top: 40px;">
+            <div class="footer-endorser" style="margin-top: 20px;">
               <div class="group-ambassador">
                 <div class="ambassador">
-                  <img src="./assets/image_footer/ambassador-hi88.png" alt="" srcset="">
+                  <img src="./assets/images/footer/1.png" alt="" srcset="">
+                </div>
+                <div class="ambassador">
+                  <img src="./assets/images/footer/2.png" alt="" srcset="">
                 </div>
               </div>
-
             </div>
           </div>
         </div>
+        
 
         <div class="footer-main2">
           <div class="team-partner">
@@ -676,7 +801,9 @@
           <a href="#">
             Những Câu Hỏi Thường Gặp</a>
         </div>
-
+        <div class="footer-legal-info dp-pc">
+          <p style="font-size: 18px;font-weight: 400;color:#26A9E0 ; text-align: center;">HI88 được sở hữu và vận hành bởi Cyber Labs B.V., một công ty được đăng ký tại Curaçao với số đăng ký 166785 và địa chỉ đăng ký tại: Zuikertuintjeweg Z/N,<br> Curaçao. Cyber Labs B.V. được cấp phép và quản lý bởi Curaçao Gaming Authority (CGA) với số giấy phép: OGL/2024/1696/1055, được cấp vào ngày <br> 13/03/2025. Dịch vụ tin cậy và được đại diện bởi <a href="https://igagroup.com" style="color:#26A9E0 ; text-decoration: underline;" target="_blank">https://igagroup.com</a></p>
+      </div>
       </div>
     </div>
   </footer>
@@ -684,101 +811,86 @@
 
   <footer id="footer-mb">
     <div class="container">
-      <div class="footer-mb-wrap">
-
-        <div class="download-taiapp">
-          <div class="wp-img-ds">
-            <img src="./assets/image_footer/ds-hi88.png" alt="" srcset="">
-          </div>
-
-          <div class="download-app">
-            <div class="wp-title">
-              <img src="./assets/image_footer/tt-download.png" alt="">
-            </div>
-
-            <div class="btn-downloads">
-              <a href="https://hi6789.com/taiapp" target="_blank" class="btn-link-ft">
-                <div class="btn-icon">
-                  <img src="./assets/image_footer/icon-android.png" alt="" srcset="">
-                </div>
-
-                <div class="wp-title-link">
-                  <span>
-                    CÀI ĐẶT THIẾT BỊ ANDROID
-                  </span>
-                </div>
-              </a>
-
-              <a href="https://hi6789.com/taiapp" target="_blank" class="btn-link-ft">
-                <div class="btn-icon">
-                  <img src="./assets/image_footer/icon-ios.png" alt="" srcset="">
-                </div>
-
-                <div class="wp-title-link">
-                  <span>
-                    CÀI ĐẶT THIẾT BỊ IOS
-                  </span>
-                </div>
-              </a>
-            </div>
-          </div>
+        <div class="footer-mb-wrap" style="padding: 0 10px;">
+          <div class="partner-title" style="color: #26A9E0;font-weight: 500;";">Đối Tác Chính Thức</div>
+          <div class="download-taiapp1">
+            <img src="./assets/images/footer/doitacchinhthuc.png" alt="">
         </div>
-
-        <ul class="list-multimedia">
-          <li class="item-media">
-            <h3 class="title">
-              GIẤY PHÉP
-            </h3>
-
-            <div class="media-image">
-              <img src="./assets/image_footer/license-ft-01.png" alt="" srcset="">
-            </div>
-          </li>
-
-          <li class="item-media">
-            <h3 class="title">
-              BẢO VỆ
-            </h3>
-
-            <div class="media-image">
-              <img class="w-65" src="./assets/image_footer/protect-ft-01.png" alt="" srcset="">
-            </div>
-          </li>
-
-          <li class="item-media">
-            <h3 class="title">
-              CHƠI CÓ TRÁCH NHIỆM
-            </h3>
-
-            <div class="media-image">
-              <img class="w-90" src="./assets/image_footer/18fun-ft-01.png" alt="" srcset="">
-            </div>
-          </li>
-
-          <li class="item-media">
-            <h3 class="title">
-              THEO DÕI CHÚNG TÔI
-            </h3>
-
-            <div class="media-image">
-              <a href="" class="w-17">
-                <img class="w-100" src="./assets/image_footer/fb-ft-01.png" alt="" srcset="">
-              </a>
-
-              <a href="" class="w-17">
-                <img class="w-100" src="./assets/image_footer/yt-ft-01.png" alt="" srcset="">
-              </a>
-
-              <a href="" class="w-17">
-                <img class="w-100" src="./assets/image_footer/tele-ft-01.png" alt="" srcset="">
-              </a>
-            </div>
-          </li>
-
-        </ul>
+        <div class="footer-news-banner" style="display: flex;gap: 10px; margin-bottom: 5px;">
+          <img src="./assets/images/footer/tintuc.png" style="width: auto; max-height: 20px;" alt="">
+          <div class="news-text" style="color: #26A9E0;font-weight: 500;">Hi88 Chiến Dịch Thương Hiệu</div>
+        </div>
+        <div class="download-taiapp1">
+          <img id="roma-toggle" src="./assets/images/footer/romaclose.jpg" alt="" style="cursor: pointer;">
       </div>
+      <div class="partner-title" style="color: #26A9E0;font-weight: 500;">Đại Sứ Thương Hiệu</div>
+      <div class="download-taiapp1">
+        <img src="./assets/images/footer/ds-hi88.png" alt="">
     </div>
-  </footer>
+    <div class="footer-news-banner" style="display: flex;gap: 10px; margin-bottom: 5px;">
+      <img src="./assets/images/footer/tintuc.png" style="width: auto; max-height: 20px;" alt="">
+      <div class="news-text" style="color: #26A9E0;font-weight: 500;">Hi88 Chiến Dịch Thương Hiệu</div>
+    </div>
+    <div class="download-taiapp1">
+      <img id="maria-toggle" src="./assets/images/footer/mariaclose.jpg" alt="" style="cursor: pointer;">
+  </div>
+
+
+            <ul class="list-multimedia">
+                <li class="item-media">
+                    <h3 class="title">
+                        GIẤY PHÉP
+                    </h3>
+
+                    <div class="media-image">
+                        <img src="./assets/image_footer/license-ft-01.png" alt="" srcset="">
+                    </div>
+                </li>
+
+                <li class="item-media">
+                    <h3 class="title">
+                        BẢO VỆ
+                    </h3>
+
+                    <div class="media-image">
+                        <img class="w-65" src="./assets/image_footer/protect-ft-01.png" alt="" srcset="">
+                    </div>
+                </li>
+
+                <li class="item-media">
+                    <h3 class="title">
+                        CHƠI CÓ TRÁCH NHIỆM
+                    </h3>
+
+                    <div class="media-image">
+                        <img class="w-90" src="./assets/image_footer/18fun-ft-01.png" alt="" srcset="">
+                    </div>
+                </li>
+
+                <li class="item-media">
+                    <h3 class="title">
+                        THEO DÕI CHÚNG TÔI
+                    </h3>
+
+                    <div class="media-image">
+                        <a href="" class="w-17">
+                            <img class="w-100" src="./assets/image_footer/fb-ft-01.png" alt="" srcset="">
+                        </a>
+
+                        <a href="" class="w-17">
+                            <img class="w-100" src="./assets/image_footer/yt-ft-01.png" alt="" srcset="">
+                        </a>
+
+                        <a href="" class="w-17">
+                            <img class="w-100" src="./assets/image_footer/tele-ft-01.png" alt="" srcset="">
+                        </a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</footer>
   <!-- 
   <div class="handle">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 70">

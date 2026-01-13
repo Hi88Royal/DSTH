@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hi88 - ĐẠI SỨ HƯƠNG HIỆU Hi88 x ANGLE DI MARIA</title>
+  <title>Hi88 - ĐỐI TÁC KHU VỰC Hi88 x A.S. ROMA</title>
   <link rel="icon" type="image/x-icon" href="/favicon.png">
   <meta name="description"
     content="Hi88 hợp tác thương hiệu cùng Angel Di Maria là một sự kiện lớn đánh dấu sự thành công của nhà cái và mở ra một chương mới trong quan hệ với ngôi sao.">
@@ -52,6 +52,431 @@
         display: block !important;
       }
     }
+    /* Responsive cho các đoạn text */
+    .content-footer-info p {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    @media (max-width: 991px) {
+      .content-footer-info p {
+        font-size: 20px !important;
+      }
+      .content-footer-info {
+        padding: 20px 15px !important;
+      }
+    }
+    @media (max-width: 767px) {
+      .content-footer-info p {
+        font-size: 18px !important;
+        line-height: 1.6 !important;
+      }
+      .content-footer-info {
+        padding: 15px 10px !important;
+      }
+      .content-footer-info ul li span {
+        font-size: 24px !important;
+      }
+    }
+    @media (max-width: 575px) {
+      .content-footer-info p {
+        font-size: 18px !important;
+        line-height: 1.5 !important;
+      }
+      .content-footer-info {
+        padding: 12px 8px !important;
+      }
+      .content-footer-info ul li span {
+        font-size: 18px !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .content-footer-info p {
+        font-size: 18px !important;
+        line-height: 1.4 !important;
+      }
+      .content-footer-info {
+        padding: 10px 5px !important;
+      }
+      .content-footer-info ul li span {
+        font-size: 18px !important;
+      }
+    }
+    /* Responsive cho video-list-row: co nhỏ khi > 767px, đổi giao diện khi ≤ 767px */
+    /* Override CSS từ style.css để giữ video trên cùng một hàng khi > 767px */
+    @media (min-width: 768px) {
+      .carousel-item .video-list-row {
+        flex-wrap: nowrap !important;
+      }
+    }
+    /* 2xl: 1536px - co nhỏ video */
+    @media (min-width: 768px) and (max-width: 1535px) {
+      .video-list-row .video-list-item,
+      .carousel-item .video-list-item {
+        max-width: 300px !important;
+        flex: 0 0 300px !important;
+      }
+      .video-list-row {
+        gap: 18px !important;
+        padding: 14px 18px !important;
+      }
+    }
+    /* xl: 1280px - co nhỏ video */
+    @media (min-width: 768px) and (max-width: 1279px) {
+      .video-list-row .video-list-item,
+      .carousel-item .video-list-item {
+        max-width: 230px !important;
+        flex: 0 0 230px !important;
+      }
+      .video-list-row {
+        gap: 15px !important;
+        padding: 12px 15px !important;
+      }
+    }
+    /* lg: 1024px - co nhỏ video */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .video-list-row .video-list-item,
+      .carousel-item .video-list-item {
+        max-width: 180px !important;
+        flex: 0 0 180px !important;
+      }
+      .video-list-row {
+        gap: 12px !important;
+        padding: 10px 12px !important;
+      }
+    }
+    /* md: 768px - đổi giao diện thành 2 cột */
+    @media (max-width: 767px) {
+      .video-list-row,
+      .carousel-item .video-list-row {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+      }
+      .video-list-row .video-list-item,
+      .carousel-item .video-list-item {
+        max-width: calc(50% - 10px) !important;
+        flex: 0 0 calc(50% - 10px) !important;
+      }
+      .video-list-row {
+        gap: 10px !important;
+        padding: 10px !important;
+      }
+    }
+    /* Fix video overlay không bị rớt khỏi banner */
+    .carousel-item .position-relative {
+      overflow: hidden !important;
+    }
+    /* Override CSS từ style.css để giữ video overlay trong banner */
+    @media (min-width: 768px) {
+      .video-overlay {
+        position: absolute !important;
+        width: 50% !important;
+        height: 100% !important;
+      }
+    }
+    @media (max-width: 991px) and (min-width: 768px) {
+      .video-overlay {
+        width: 45% !important;
+        padding: 15px !important;
+      }
+    }
+    @media (max-width: 767px) {
+      /* Ẩn video trong banner trên mobile */
+      .carousel-item .position-relative .video-overlay,
+      .carousel-item .position-relative .video-list-row {
+        display: none !important;
+      }
+      /* Style cho video container khi di chuyển ra ngoài */
+      .video-mobile-container {
+        width: 100% !important;
+        margin: 20px 0 !important;
+        overflow: hidden !important;
+      }
+      .video-mobile-container .video-overlay {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 20px !important;
+        margin: 0 !important;
+      }
+      .video-mobile-container .video-overlay .video-container {
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+      .video-mobile-container .video-list-row {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        align-items: center !important;
+        gap: 0 !important;
+        padding: 16px 0 !important;
+        background: transparent !important;
+        margin: 0 !important;
+        -webkit-overflow-scrolling: touch !important;
+        scroll-behavior: auto !important;
+      }
+      .video-mobile-container .video-list-item {
+        flex: 0 0 70% !important;
+        max-width: 60% !important;
+        min-width: 60% !important;
+        position: relative !important;
+        transition: all 0.35s ease !important;
+        flex-shrink: 0 !important;
+        z-index: 1 !important;
+        transform: scale(0.9) !important;
+        opacity: 0.85 !important;
+        filter: brightness(0.9) !important;
+        margin-left: -32px !important;
+      }
+      .video-mobile-container .video-list-item:first-child {
+        margin-left: 0 !important;
+      }
+      .video-mobile-container .video-list-item.is-center {
+        transform: scale(1.08) !important;
+        z-index: 3 !important;
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+        box-shadow: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+        overflow: hidden !important;
+      }
+      .video-mobile-container .video-list-item video {
+        border-radius: 12px !important;
+        display: block !important;
+        max-height: 100% !important;
+      }
+      .video-mobile-container .video-list-item.is-center {
+        transform-origin: center center !important;
+      }
+      /* Ẩn scrollbar nhưng vẫn scroll được */
+      .video-mobile-container .video-list-row::-webkit-scrollbar {
+        display: none !important;
+      }
+      .video-mobile-container .video-list-row {
+        -ms-overflow-style: none !important;
+        scrollbar-width: none !important;
+      }
+      /* Phần A.S. ROMA nhảy xuống một chút */
+      .container.mt-4:first-of-type {
+        margin-top: 30px !important;
+      }
+    }
+    /* Fix cup-item luôn bằng nhau - chỉ co lại, không xuống hàng */
+    .list-cups {
+      flex-wrap: nowrap !important;
+    }
+    .list-cups .cup-item {
+      width: calc(25% - 12px) !important;
+      flex: 0 0 calc(25% - 12px) !important;
+      flex-shrink: 0 !important;
+      min-width: 0 !important;
+      max-width: calc(25% - 12px) !important;
+    }
+    .list-cups .img-cup {
+      width: 100% !important;
+      height: auto !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      aspect-ratio: 1 / 1 !important;
+      min-height: 200px !important;
+    }
+    .list-cups .img-cup img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: contain !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+    }
+    @media (max-width: 1199px) {
+      .list-cups .cup-item {
+        width: calc(25% - 10px) !important;
+        flex-shrink: 1 !important;
+      }
+      .list-cups .img-cup {
+        min-height: 180px !important;
+      }
+    }
+    @media (max-width: 991px) {
+      .list-cups .cup-item {
+        width: calc(25% - 8px) !important;
+        flex: 0 0 calc(25% - 8px) !important;
+        max-width: calc(25% - 8px) !important;
+      }
+      .list-cups .img-cup {
+        min-height: 160px !important;
+      }
+    }
+    @media (max-width: 767px) {
+      .list-cups {
+        flex-wrap: wrap !important;
+        gap: 15px !important;
+        justify-content: center !important;
+      }
+      .list-cups .cup-item {
+        width: calc(50% - 8px) !important;
+        flex: 0 0 calc(50% - 8px) !important;
+        max-width: calc(50% - 8px) !important;
+      }
+      .list-cups .img-cup {
+        min-height: 180px !important;
+      }
+    }
+    @media (max-width: 575px) {
+      .list-cups {
+        gap: 12px !important;
+      }
+      .list-cups .cup-item {
+        width: calc(50% - 6px) !important;
+        flex: 0 0 calc(50% - 6px) !important;
+        max-width: calc(50% - 6px) !important;
+      }
+      .list-cups .img-cup {
+        min-height: 160px !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .list-cups {
+        gap: 10px !important;
+      }
+      .list-cups .cup-item {
+        width: calc(50% - 5px) !important;
+        flex: 0 0 calc(50% - 5px) !important;
+        max-width: calc(50% - 5px) !important;
+      }
+      .list-cups .img-cup {
+        min-height: 140px !important;
+      }
+    }
+    /* Fix thumbnail không tràn ra khỏi khung xanh */
+    .site-bar {
+      overflow: hidden !important;
+    }
+    .list-group .item-group {
+      overflow: hidden !important;
+    }
+    .list-group .item-group .box {
+      overflow: hidden !important;
+    }
+    .list-group .item-group .wp-thumb-nail {
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+    }
+    .list-group .item-group .wp-thumb-nail img {
+      max-width: 100% !important;
+      max-height: 100% !important;
+      object-fit: cover !important;
+    }
+    /* Responsive cho site-bar - thu nhỏ gọn hơn */
+    @media (max-width: 1199px) {
+      .site-bar {
+        width: 85px !important;
+        height: auto !important;
+        padding: 15px 6px !important;
+        min-height: fit-content !important;
+      }
+      .site-bar:before {
+        width: 50px !important;
+      }
+      .list-group {
+        gap: 6px !important;
+        padding: 8px 0px !important;
+      }
+      .list-group .item-group .wp-thumb-nail {
+        width: 45px !important;
+        height: 45px !important;
+        margin-left: -7.5px !important;
+      }
+      .list-group .item-group .wp-thumb-nail.active {
+        width: 55px !important;
+        height: 55px !important;
+        margin-left: 0 !important;
+      }
+    }
+    
+    @media (max-width: 767px) {
+      .site-bar {
+        width: 60px !important;
+        padding: 10px 3px !important;
+        left: 3px !important;
+      }
+      .site-bar:before {
+        width: 40px !important;
+      }
+      .list-group {
+        gap: 4px !important;
+        padding: 5px 0px !important;
+      }
+      .list-group .item-group .wp-thumb-nail {
+        width: 35px !important;
+        height: 35px !important;
+        margin-left: -20px !important;
+      }
+      .list-group .item-group .wp-thumb-nail.active {
+        width: 42px !important;
+        height: 42px !important;
+        margin-left: 0 !important;
+      }
+      /* Giảm kích thước chữ các tiêu đề từ 767px trở xuống */
+      .title-section .title h2 {
+        font-size: 20px !important;
+      }
+      .title-section .title {
+        padding: 8px 60px !important;
+      }
+    }
+    @media (max-width: 575px) {
+      .site-bar {
+        width: 50px !important;
+        padding: 8px 2px !important;
+        left: 2px !important;
+      }
+      .site-bar:before {
+        width: 35px !important;
+      }
+      .list-group {
+        gap: 3px !important;
+        padding: 4px 0px !important;
+      }
+      .list-group .item-group .wp-thumb-nail {
+        width: 30px !important;
+        height: 30px !important;
+        margin-left: -15px !important;
+      }
+      .list-group .item-group .wp-thumb-nail.active {
+        width: 36px !important;
+        height: 36px !important;
+        margin-left: 0 !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .site-bar {
+        width: 45px !important;
+        padding: 6px 2px !important;
+        left: 2px !important;
+      }
+      .site-bar:before {
+        width: 30px !important;
+      }
+      .list-group {
+        gap: 2px !important;
+        padding: 3px 0px !important;
+      }
+      .list-group .item-group .wp-thumb-nail {
+        width: 26px !important;
+        height: 26px !important;
+      }
+      .list-group .item-group .wp-thumb-nail.active {
+        width: 32px !important;
+        height: 32px !important;
+        margin-left: 0 !important;
+      }
+    }
   </style>
   <script src="./assets/js/jquery_3.6.0_jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
@@ -61,12 +486,32 @@
 </head>
 
 <body>
-  <!-- <div class="site-bar">
+  <div class="site-bar">
     <div class="list-group slider-top">
-      <div class="item-group handle-click" data-url="./assets/images/di-marira/angle-di-maria.png" data-status="1">
-        <a href="/" class="box">
-          <div class="wp-thumb-nail active">
-            <img data-src="./assets/images/di-marira/angle-di-maria.png">
+      <div
+      class="item-group handle-click"
+      data-url="./assets/images/roma/logositebar.png"
+      data-status="1"
+    >
+      <a href="/index-roma.html" class="box">
+        <div class="wp-thumb-nail">
+          <img data-src="./assets/images/roma/logositebar.png" />
+        </div>
+
+        <div class="wp-title">
+          <span class="tilte">A.S. Roma</span>
+          <span>Đối tác khu vực</span>
+        </div>
+      </a>
+    </div>
+      <div
+        class="item-group handle-click"
+        data-url="./assets/images/di-marira/angle-di-maria.png"
+        data-status="1"
+      >
+        <a href="/index.html" class="box">
+          <div class="wp-thumb-nail">
+            <img data-src="./assets/images/di-marira/angle-di-maria.png" />
           </div>
 
           <div class="wp-title">
@@ -75,41 +520,25 @@
           </div>
         </a>
       </div>
+     
     </div>
 
     <div class="list-group slider-bottom">
-      <div class="item-group handle-click" data-url="./assets/images/230627_MEDIAPRO_OKVIP_highlights_0041_cut.jpg"
-        data-url-sm="./assets/images/bg-okvip-sm.jpg" data-status="2">
-        <a href="https://hi88.salon/lienminh-okvip" target="_blank" rel="nofollow" class="box">
-          <div class="wp-thumb-nail">
-            <img data-src="./assets/images/di-marira/okvip.png">
-          </div>
-
-          <div class="wp-title">
-            <span class="tilte">Liên Minh OKVIP</span>
-            <span>Đối tác thương hiệu</span>
-          </div>
-        </a>
+      <div
+            class="item-group"
+            data-url="./assets/images/clb-moi.jpg"
+            data-url-sm="./assets/images/ds-bian.jpg"
+          >
       </div>
 
-      <div class="item-group handle-click" data-url="./assets/images/club-villa.jpg"
-        data-url-sm="./assets/images/club-villa-sm.jpg" data-status="3">
-        <a href="https://hi88.salon/lienminh-okvip" class="box">
-          <div class="wp-thumb-nail">
-            <img data-src="./assets/images/di-marira/Villarreal-CF.png">
-          </div>
-
-          <div class="wp-title">
-            <span class="tilte">CLB Villarreal CF</span>
-            <span>Đối tác thương hiệu</span>
-          </div>
-        </a>
-      </div>
-
-      <div class="item-group" data-url="./assets/images/clb-moi.jpg" data-url-sm="./assets/images/ds-bian.jpg">
+      <div
+        class="item-group"
+        data-url="./assets/images/clb-moi.jpg"
+        data-url-sm="./assets/images/ds-bian.jpg"
+      >
         <div class="box">
           <div class="wp-thumb-nail">
-            <img data-src="./assets/images/di-marira/icon-ol-plus-2.png">
+            <img data-src="./assets/images/icon-ol-plus-2.png" />
           </div>
 
           <div class="wp-title">
@@ -118,17 +547,17 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 
   <header class="header2">
     <div class="logo-daisu" data-logo-status="1">
-      <a href="/">
+      <a href="/index-roma.html">
         <img data-src="./assets/images/roma/logo-hi88.png" src="./assets/images/roma/logo-hi88.png">
       </a>
     </div>
   </header>
   <main>
-    <section>
+    <section  class=" bg-hi88 bg-content">
       <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="7000">
@@ -137,48 +566,47 @@
                 src="./assets/images/roma/banner-slide-1.png" class="d-block w-100" alt="Banner Roma" >
               <!-- Video overlay với absolute positioning -->
               <div class="video-overlay">
-                <div class="video-container">
+                <div class="video-container" style="max-width: 70%;">
                   <video poster="./assets/images/di-marira/Hi88-Di-Maria-Thumb.jpg" preload="auto" autoplay loop muted
-                    controls>
+                    controls style="width: 100%; height: auto;">
                     <source src="https://njenjaxje82berb45ndi12kdcnjdk.com/Hi88_Media/20241105223733.mp4" type="video/mp4">
                     Your browser does not support HTML5 video.
                   </video>
                 </div>
               </div>
-            </div>
-            <div class="position-relative">
-              <div class="video-list-row">
-                <div class="video-list-item">
-                  <div class="video-container-small">
+              <!-- 4 Video nhỏ ở dưới banner với absolute positioning -->
+              <div class="video-list-row" style="position: absolute; bottom: 0; left: 0; right: 0; gap: 20px; padding: 15px 20px; background: transparent;">
+                <div class="video-list-item" style="max-width: 360px; flex: 0 0 360px;">
+                  <div class="video-container-small" style="background: transparent;">
                     <video poster="./assets/images/di-marira/Hi88-Di-Maria-Thumb.jpg" preload="auto" autoplay loop muted
-                      controls>
+                      controls style="width: 100%; height: auto; background: transparent; box-shadow: none;">
                       <source src="https://njenjaxje82berb45ndi12kdcnjdk.com/Hi88_Media/20241105223733.mp4" type="video/mp4">
                       Your browser does not support HTML5 video.
                     </video>
                   </div>
                 </div>
-                <div class="video-list-item">
-                  <div class="video-container-small">
+                <div class="video-list-item" style="max-width: 360px; flex: 0 0 360px;">
+                  <div class="video-container-small" style="background: transparent;">
                     <video poster="./assets/images/di-marira/Hi88-Di-Maria-Thumb.jpg" preload="auto" autoplay loop muted
-                      controls>
+                      controls style="width: 100%; height: auto; background: transparent; box-shadow: none;">
                       <source src="https://njenjaxje82berb45ndi12kdcnjdk.com/Hi88_Media/20241105223733.mp4" type="video/mp4">
                       Your browser does not support HTML5 video.
                     </video>
                   </div>
                 </div>
-                <div class="video-list-item">
-                  <div class="video-container-small">
+                <div class="video-list-item" style="max-width: 360px; flex: 0 0 360px;">
+                  <div class="video-container-small" style="background: transparent;">
                     <video poster="./assets/images/di-marira/Hi88-Di-Maria-Thumb.jpg" preload="auto" autoplay loop muted
-                      controls>
+                      controls style="width: 100%; height: auto; background: transparent; box-shadow: none;">
                       <source src="https://njenjaxje82berb45ndi12kdcnjdk.com/Hi88_Media/20241105223733.mp4" type="video/mp4">
                       Your browser does not support HTML5 video.
                     </video>
                   </div>
                 </div>
-                <div class="video-list-item">
-                  <div class="video-container-small">
+                <div class="video-list-item" style="max-width: 360px; flex: 0 0 360px;">
+                  <div class="video-container-small" style="background: transparent;">
                     <video poster="./assets/images/di-marira/Hi88-Di-Maria-Thumb.jpg" preload="auto" autoplay loop muted
-                      controls>
+                      controls style="width: 100%; height: auto; background: transparent; box-shadow: none;">
                       <source src="https://njenjaxje82berb45ndi12kdcnjdk.com/Hi88_Media/20241105223733.mp4" type="video/mp4">
                       Your browser does not support HTML5 video.
                     </video>
@@ -190,44 +618,48 @@
         </div>
       </div>
       
-      <!-- 4 Video nhỏ bên dưới banner trong cùng section -->
-      
+  <div>
+    <img src="./assets/images/roma/Hi88androma.png" alt="">
+  </div>      
 
      <div class="container mt-4">
-      <div class="title-section">
-        <div class="title aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
-          <img data-src="./assets/images/di-marira/img-title-left.png" alt="" class="title-heading">
-          <h2>A.S. ROMA </h2>
-
-          <img data-src="./assets/images/di-marira/img-titile-right.png" alt="" class="title-heading">
+      <div class="title-section" style="text-align: center;">
+        <div class="title aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" style="border-radius: 2px;background: linear-gradient(90deg, rgba(190, 236, 255, 0.35) 0%, #26A9E0 30.77%, #26A9E0 68.75%, rgba(190, 236, 255, 0.35) 100%); display: inline-block; width: fit-content; padding: 10px 100px; border-radius: 10px;">
+          <h2 style="color: #FFF;font-weight: 600; margin: 0;">A.S. ROMA </h2>
         </div>
-      </div>
+      </div> 
       <div class="content-section mt-3">
         <div class=" aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
           <img data-src="./assets/images/roma/hi88-angle-di-maria-ky-ket.png" alt="">
         </div>
-        <div class=" aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
-          <p>A.S. ROMA là một đội tuyển bóng đá có trụ sở tại ROMA Ý. Được thành lập bởi sự hợp nhất vào năm 1927, Roma đã tham gia giải đấu hàng đầu của bóng đá Ý trong suốt thời gian tồn tại, ngoại trừ mùa giải 1951–52. Roma đã ba lần vô địch Serie A vào các mùa giải 1941–42, 1982–83 và 2000–01, cũng như chín danh hiệu Coppa Italia và hai danh hiệu Supercoppa Italiana. Trong các giải đấu châu Âu, Roma đã giành vô địch UEFA Europa Conference League vào mùa 2021–22, Inter-Cities Fairs Cup vào mùa 1960–61 và là á quân European Cup 1983–84 và UEFA Cup 1990–91.</p>
+        <div class="aos-init aos-animate" data-aos="fade-up" data-aos-duration="2000"
+          style="text-align:-webkit-center;">
+          <div class="content-footer-info" style="width: 100%; padding: 25px 10px; background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(151, 214, 240, 0.15) 15.87%, rgba(95, 192, 232, 0.15) 61.54%, rgba(38, 169, 224, 0.15) 100%); border-radius: 10px;">
+            <p style="color: #161C2D;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;">
+              A.S. Roma thường được biết đến với biệt danh Giallorossi, là một trong những câu lạc bộ giàu truyền thống và bản sắc nhất của bóng đá Ý. Được thành lập tại thủ đô Rome, đội bóng đã 3 lần vô địch Serie A, 9 lần đăng quang Coppa Italia và 2 lần giành Siêu cúp Ý, khẳng định vị thế vững chắc tại các đấu trường quốc nội. Trên bình diện châu Âu, A.S. Roma từng giành chức vô địch Inter-Cities Fairs Cup mùa giải 1960–61 và thường xuyên góp mặt tại các giải đấu lớn. Đặc biệt, danh hiệu UEFA Europa Conference League 2021–22 đã mang về chiếc cúp châu Âu đầu tiên trong lịch sử câu lạc bộ, đánh dấu cột mốc quan trọng trong chiến lược phát triển và nâng tầm thương hiệu toàn cầu. <br> Với tinh thần thi đấu kiên cường, bản lĩnh và tham vọng bền bỉ, A.S. Roma tiếp tục là biểu tượng giàu sức hút của bóng đá châu Âu hiện đại.
+            </p>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="container mt-4">
-      <div class="title-section">
-        <div class="title aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
-          <img data-src="./assets/images/di-marira/img-title-left.png" alt="" class="title-heading">
-          <h2>Buổi ký kết hợp tác</h2>
-
-          <img data-src="./assets/images/di-marira/img-titile-right.png" alt="" class="title-heading">
+      <div class="title-section" style="text-align: center;">
+        <div class="title aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" style="border-radius: 2px;background: linear-gradient(90deg, rgba(190, 236, 255, 0.35) 0%, #26A9E0 30.77%, #26A9E0 68.75%, rgba(190, 236, 255, 0.35) 100%); display: inline-block; width: fit-content; padding: 10px 100px; border-radius: 10px;">
+          <h2 style="color: #FFF;font-weight: 600; margin: 0;">BUỔI KÝ KẾT HỢP TÁC </h2>
         </div>
-      </div>
+      </div>  
       <div class="content-section mt-3" style="display: flex; align-items: center; gap: 30px; text-align: left;">
         <div class=" aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" style="flex: 1; min-width: 0;">
           <img data-src="./assets/images/roma/bongda.png" alt="" style="width: 100%; max-width: 800px; height: auto; margin: 0;">
         </div>
 
         <div class=" aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" style="flex: 1; min-width: 0;">
-            <p style="margin: 0; padding-left: 20px; font-size: 20px; text-align: start; color: #161c2d;">Tháng xx – 2025, Hi88 cùng với CLB A.S. ROMA công bố buổi họp báo về hợp tác đối tác thương hiệu. Buổi lễ đánh dấu sự thành công của Hi88 khi đã độc quyền sử dụng hình ảnh của đội tuyển.</p>
+          <img data-src="./assets/images/roma/kyket.png" alt="" style="width: 100%; max-width: 800px; height: auto; margin: 0;">
         </div>
       </div>
       <div class="content-section mt-3" style="display: flex; align-items: center; gap: 30px; text-align: left;">
@@ -250,276 +682,126 @@
             
             </div>
 
-            <div class="aos-init aos-animate" data-aos="fade-up" data-aos-duration="2000"
-              style="text-align:-webkit-center;">
-              <div class="content-footer-info">
-                <p>
-                  Hi88 hợp tác thương hiệu cùng A.S. ROMA là một sự kiện lớn đánh dấu sự thành công của nhà cái và mở ra <br>  một chương mới trong quan hệ với ngôi sao.
-                </p>
-              </div>
-            </div>
+           
           </div>
           <!-- Ký kết -->
           <div class="container mt-4">
-            <div class="title-section">
-              <div class="title aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
-                <img data-src="./assets/images/di-marira/img-title-left.png" alt="" class="title-heading">
-                <h2>LỢI ÍCH KÝ KẾT</h2>
-
-                <img data-src="./assets/images/di-marira/img-titile-right.png" alt="" class="title-heading">
+            <div class="title-section" style="text-align: center;">
+              <div class="title aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" style="border-radius: 2px;background: linear-gradient(90deg, rgba(190, 236, 255, 0.35) 0%, #26A9E0 30.77%, #26A9E0 68.75%, rgba(190, 236, 255, 0.35) 100%); display: inline-block; width: fit-content; padding: 10px 100px; border-radius: 10px;">
+                <h2 style="color: #FFF;font-weight: 600; margin: 0;">LỢI ÍCH KÝ KẾT</h2>
               </div>
             </div> 
-                <img data-src="./assets/images/roma/doitackhuvucchinhthuc.png" alt="">      
-              <div class=" aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
-                <p>Tháng 5 – 2024, Hi88 cùng với ngôi sao Angel Di Maria công bố buổi họp báo về hợp tác
-                  đại sứ thương hiệu. Buổi lễ đánh dấu sự thành công của Hi88 khi đã độc quyền sử dụng
-                  hình ảnh của chân sút người Argentina.</p>
-              </div>
-            </div>
           </div>
-          <!-- Lợi ích -->
+          
+          <!-- Ảnh -->
+          <div class="mt-3 mb-3" style="text-align: center;">
+            <img data-src="./assets/images/roma/doitackhuvucchinhthuc.png" alt="" style="width: 100%; max-width: 1400px; height: auto; margin: 0;">
+          </div>
+          
           <div class="container">
-            <div class="title-section">
-              <div class="title aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
-                <img data-src="./assets/images/di-marira/img-title-left.png" alt="" class="title-heading">
-                <h2>LỢI ÍCH KÝ KẾT</h2>
+            <div class="content-section mt-3">
+              <div class="content-footer-info" style="width: 100%; padding: 0 20px; background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(151, 214, 240, 0.15) 15.87%, rgba(95, 192, 232, 0.15) 61.54%, rgba(38, 169, 224, 0.15) 100%); border-radius: 10px;">
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                  <li style="color: #26A9E0; font-size: 28px; font-style: normal; font-weight: 600; line-height: 150%; text-align: start; display: flex; align-items: center; gap: 10px;">
+                    <span style="display: inline-block; width: 12px; height: 12px; background-color: #26A9E0; flex-shrink: 0; border-radius: 50%;"></span>
+                    <span style="color: #26A9E0;
 
-                <img data-src="./assets/images/di-marira/img-titile-right.png" alt="" class="title-heading">
-              </div>
-            </div>
-            <div class="benefit-section">
-
-              <div class="benefit-section-left">
-                <div class=" aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
-                  <h3>Hi88 ngày càng khẳng định vị thế của mình</h3>
-                  <p>Theo đó cựu cầu thủ Real Madrid sẽ song hành cùng với Hi88 trong suốt hành trình
-                    chinh phục hàng triệu người chơi trên khắp châu Á. Và hình ảnh của anh chàng
-                    liên tục xuất hiện trên trang của của nhà cái với mục đích nâng cao hình ảnh, sự
-                    uy tín cho thương hiệu.</p>
-                  <p>Mặt khác, ngay khi đặt bút ký vào bản hợp đồng triệu đô Angel Di Maria không dấu
-                    được niềm hạnh phúc, sự hân hoan khi chính thức là gương mặt đại diện của một
-                    nền tảng cá cược tầm cỡ châu lục. Song song với đó Angel cũng đưa ra cam kết hỗ
-                    trợ đưa tên tuổi của nhà cái thịnh hành hơn trên toàn cầu.</p>
-                </div>
-                <div class=" aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
-                  <h3>Mở ra những cơ hội mới trong phát triển thương hiệu</h3>
-                  <p>Đối với Hi88, đây là lần đầu tiên nhà cái mời được một siêu sao bóng đá trở thành
-                    đại sứ thương hiệu. Chính vì vậy mà buổi ký kết này vừa là bước ngoặt mới, vừa
-                    là
-                    việc củng cố hình ảnh thương hiệu và tăng độ phủ sóng của Hi88.</p>
-                  <p>Đặc biệt với thành tựu mà Angel Di Maria đã dày công gây dựng chắc chắn việc trở
-                    thành đại sứ cho một nhà cái uy tín như Hi88 lại càng giúp hình ảnh của ngôi sao
-                    này trở nên viral hơn ở thị trường Châu Á.</p>
-                  <p>Có thể khẳng định, sau buổi ký kết mối quan hệ hợp tác giữa Angel và Hi88 sẽ càng
-                    đem đến nhiều quyền lợi hơn cho cả 2 bên. Hy vọng ở 1 cương vị mới Angel Di
-                    Maria sẽ
-                    hoàn thành tốt vai trò của một đại sứ.</p>
-                </div>
-              </div>
-              <div class="benefit-section-right">
-                <div class=" aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
-                  <img data-src="./assets/images/di-marira/hi88-angle-di-maria-ky-benefit.png" alt="">
-                </div>
-              </div>
-            </div>
-
-            <div class="benefit-section-footer">
-              <div class="aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
-                <p> Sự kiện Hi88 hợp tác thương hiệu cùng Angel Di Maria đã đánh dấu một bước ngoặt đột
-                  phá mang tầm vóc mới, hứa hẹn sự bùng nổ trong thời gian sắp tới.</p>
+                    font-size: 28px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 150%;">Mở ra những cơ hội mới trong phát triển thương hiệu</span>
+                  </li>
+                </ul>
+                <p style="color: #161C2D;
+                font-size: 22px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;">Trong hành trình mở rộng dấu ấn toàn cầu, Hi88 lựa chọn đồng hành cùng A.S. Roma nhằm tạo nên giá trị cộng hưởng chiến lược, nơi mỗi bên phát huy thế mạnh riêng trong tầm nhìn phát triển dài hạn. Đối với Hi88, sự gắn kết với một biểu tượng bóng đá châu Âu giàu truyền thống giúp Hi88 củng cố uy tín thương hiệu và gia tăng độ nhận diện tại các thị trường quốc tế. Ở chiều ngược lại, A.S. Roma được tiếp thêm động lực từ một thương hiệu giải trí uy tín hàng đầu châu Á, qua đó mở rộng hiện diện thương mại, gia tăng kết nối với cộng đồng người hâm mộ toàn cầu. Không chỉ dừng ở giá trị thương mại, mối quan hệ hợp tác này thể hiện bản lĩnh, tính chuyên nghiệp và tầm nhìn chiến lược hướng tới phát triển bền vững song phương.  Hãy cùng chờ đón những dấu ấn rực rỡ, những khoảnh khắc đáng nhớ và hành trình thành công đầy cảm hứng từ mối quan hệ hợp tác giàu tiềm năng này sẽ mang lại.</p>
               </div>
             </div>
           </div>
-
-
-        </div>
-
-        <div class="tab-content" data-content-tab="2">
-          <div class="career-di-maria">
-            <div class="container">
-              <div class="list-career">
-                <div class="aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
-                  <p>Về thành tích cá nhân, Di Maria lọt vào đội hình tiêu biểu FIFPro 2014, các kỷ
-                    lục kiến tạo tại giải League 1 và Champion League. Tại những giải đấu anh tham
-                    dự đều có danh hiệu cầu thủ xuất sắc nhất tháng. <br>
-                    Trong quá trình thi đấu của mình tại đội tuyển quốc gia và Câu lạc bộ, Di Maria
-                    nhận được các danh hiệu cá nhân như:
-                  </p>
-                </div>
-                <div class="career-content">
-                  <div class="career-left">
-                    <ul>
-                      <li>Argentine Footballer of the Year: 2014</li>
-                      <li>SJPF Player of the Month: April 2010</li>
-                      <li>FIFA FIFPro World11: 2014</li>
-                      <li>FIFA World Cup Dream Team: 2014</li>
-                      <li>UEFA Team of the Year: 2014</li>
-                      <li>UEFA Champions League Squad of the Season: 2013 – 2014</li>
-                      <li>UNFP Ligue 1 Player of the Month: December 2015</li>
-                      <li>UNFP Ligue 1 Team of the Year: 2015 – 2016, 2018 – 2019</li>
-                      <li>ESM Team of the Year: 2015 – 2016, 2019 – 2020</li>
-                      <li>IFFHS CONMEBOL team of the decade 2011 – 2020</li>
-                    </ul>
-                  </div>
-                  <div class="career-right text-center align-content-center">
-                    <img data-src="./assets/images/di-marira/career-di-maria.png" alt="">
-                  </div>
+          </div>
+          <div >
+            <img src="./assets/images/roma/Hi88androma.png" alt="">
+          </div>
+          <div class="container">          
+            <div class="title-section" style="text-align: center;">
+              <div class="title aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" style="border-radius: 2px;background: linear-gradient(90deg, rgba(190, 236, 255, 0.35) 0%, #26A9E0 30.77%, #26A9E0 68.75%, rgba(190, 236, 255, 0.35) 100%); display: inline-block; width: fit-content; padding: 10px 100px; border-radius: 10px;">
+                <h2 style="color: #FFF;font-weight: 600; margin: 0;">DANH HIỆU VÔ ĐỊCH ĐỘI TUYỂN ĐÃ ĐẠT ĐƯỢC</h2>
+              </div>
+            </div> 
+            
+            <div class="list-cups mt-4" style="flex-wrap: nowrap; gap: 15px;">
+              <div class="cup-item" style="width: calc(25% - 12px); flex-shrink: 0;">
+                <div class="img-cup">
+                  <img src="./assets/images/roma/cup1.png" alt="" class="img-fluid">
                 </div>
               </div>
-
+              
+              <div class="cup-item" style="width: calc(25% - 12px); flex-shrink: 0;">
+                <div class="img-cup">
+                  <img src="./assets/images/roma/cup2.png" alt="" class="img-fluid">
+                </div>
+              </div>
+              
+              <div class="cup-item" style="width: calc(25% - 12px); flex-shrink: 0;">
+                <div class="img-cup">
+                  <img src="./assets/images/roma/cup3.png" alt="" class="img-fluid">
+                </div>
+              </div>
+              
+              <div class="cup-item" style="width: calc(25% - 12px); flex-shrink: 0;">
+                <div class="img-cup">
+                  <img src="./assets/images/roma/cup4.png" alt="" class="img-fluid">
+                </div>
+              </div>
             </div>
-            <div class="bg-career">
-              <div class="container">
-                <div class="content">
-                  <div class="title  aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
-                    <!-- <img data-src="./assets/images/di-marira/img-title-left.png" alt=""
-                                            class="title-heading"> -->
-                    <h2>DANH HIỆU VÔ ĐỊCH VÀ </br> THÀNH TÍCH CÁ NHÂN TRONG SỰ NGHIỆP</h2>
-
-                    <!-- <img data-src="./assets/images/di-marira/img-titile-right.png" alt=""
-                                            class="title-heading"> -->
-                  </div>
-
-                  <div class="list-profile aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="profile-item aos-init aos-animate" data-aos="fade-up" data-aos-duration="2000">
-                      <div class="box-macth">
-                        <span class="number count" data-to="504" data-speed="1500">504</span>
-                      </div>
-
-                      <h3>TRẬN ĐẤU</h3>
-                    </div>
-
-                    <div class="profile-item aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
-                      <div class="box-macth">
-                        <span class="number count" data-to="138" data-speed="1500">138</span>
-                      </div>
-
-                      <h3>TRẬN CẤP QUỐC GIA</h3>
-                    </div>
-
-                    <div class="profile-item aos-init aos-animate" data-aos="fade-up" data-aos-duration="2000">
-                      <div class="box-macth">
-                        <span class="number count" data-to="105" data-speed="1500">105</span>
-                      </div>
-
-                      <h3>BÀN THẮNG</h3>
-                    </div>
-                  </div>
-
-                  <div class="list-cups list-cups-hi88">
-                    <div class="cup-item">
-                      <div class="img-cup">
-                        <img data-src="./assets/images/di-marira/career-1.png" alt="" srcset="">
-                        <img data-src="./assets/images/di-marira/cup-1.png" alt="" srcset="">
-                      </div>
-                      <h3>Argentine Footballer of the Year</h3>
-                    </div>
-
-                    <div class="cup-item">
-                      <div class="img-cup">
-                        <img data-src="./assets/images/di-marira/career-2.png" alt="" srcset="">
-                        <img data-src="./assets/images/di-marira/cup-2.png" alt="" srcset="">
-                      </div>
-                      <h3>4 cup Ligue 1</h3>
-                    </div>
-                    <div class="cup-item">
-                      <div class="img-cup">
-                        <img data-src="./assets/images/di-marira/career-3.png" alt="" srcset="">
-                        <img data-src="./assets/images/di-marira/cup-3.png" alt="" srcset="">
-                      </div>
-                      <h3>1 cup liên lục địa</h3>
-                    </div>
-
-                    <div class="cup-item">
-                      <div class="img-cup">
-                        <img data-src="./assets/images/di-marira/career-4.png" alt="" srcset="">
-                        <img data-src="./assets/images/di-marira/cup-4.png" alt="" srcset="">
-                      </div>
-                      <h3>5 cup bóng đá pháp</h3>
-                    </div>
-
-                    <div class="cup-item">
-                      <div class="img-cup">
-                        <img data-src="./assets/images/di-marira/career-5.png" alt="" srcset="">
-                        <img data-src="./assets/images/di-marira/cup-5.png" alt="" srcset="">
-                      </div>
-                      <h3>1 cup Copa America</h3>
-                    </div>
-
-                    <div class="cup-item">
-                      <div class="img-cup">
-                        <img data-src="./assets/images/di-marira/career-6.png" alt="" srcset="">
-                        <img data-src="./assets/images/di-marira/cup-6.png" alt="" srcset="">
-                      </div>
-                      <h3>1 cup Copa del Rey</h3>
-                    </div>
-
-                    <div class="cup-item">
-                      <div class="img-cup">
-                        <img data-src="./assets/images/di-marira/career-7.png" alt="" srcset="">
-                        <img data-src="./assets/images/di-marira/cup-7.png" alt="" srcset="">
-                      </div>
-                      <h3>Copa America</h3>
-                    </div>
-
-                    <div class="cup-item">
-                      <div class="img-cup">
-                        <img data-src="./assets/images/di-marira/career-8.png" alt="" srcset="">
-                        <img data-src="./assets/images/di-marira/cup-8.png" alt="" srcset="">
-                      </div>
-                      <h3>danh hiệu La Liga</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    </section>
-    </div>
-    </div>
-    </div>
+          </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <div class="hi88-event" style="width: 98%;margin: 0 auto;">
       <div class="content">
-        <div class="title-section">
-          <div class="title aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
-            <img data-src="./assets/images/di-marira/img-title-left.png" alt="" class="title-heading">
-            <h2>SỰ KIỆN NỔI BẬT</h2>
-            <img data-src="./assets/images/di-marira/img-titile-right.png" alt="" class="title-heading">
+        <div class="title-section" style="text-align: center;">
+          <div class="title aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" style="border-radius: 2px;background: linear-gradient(90deg, rgba(190, 236, 255, 0.35) 0%, #26A9E0 30.77%, #26A9E0 68.75%, rgba(190, 236, 255, 0.35) 100%); display: inline-block; width: fit-content; padding: 10px 100px; border-radius: 10px; margin-bottom: 20px;">
+            <h2 style="color: #FFF;font-weight: 600; margin: 0;">SỰ KIỆN NỔI BẬT</h2>
           </div>
-        </div>
+        </div> 
 
         <div id="block4">
           <div class="row justify-content-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="2000">
             <div class="text-center align-self-center img-event1" data-target="#carousel4" data-slide-to="0">
-              <img data-src="./assets/images/di-marira/hi88-angle-di-maria-1.png" data-toggle="modal"
+              <img data-src="./assets/images/roma/1.png" data-toggle="modal"
                 data-target="#lightbox4">
             </div>
             <div class="text-center align-self-center img-event2" data-target="#carousel4" data-slide-to="1">
-              <img data-src="./assets/images/di-marira/hi88-angle-di-maria-2.png" data-toggle="modal"
+              <img data-src="./assets/images/roma/2.png" data-toggle="modal"
                 data-target="#lightbox4">
             </div>
             <div class="text-center align-self-center img-event1" data-target="#carousel4" data-slide-to="2">
-              <img data-src="./assets/images/di-marira/hi88-angle-di-maria-3.png" data-toggle="modal"
+              <img data-src="./assets/images/roma/5.png" data-toggle="modal"
                 data-target="#lightbox4">
             </div>
             <div class="text-center align-self-center img-event2" data-target="#carousel4" data-slide-to="3">
-              <img data-src="./assets/images/di-marira/hi88-angle-di-maria-4.png" data-toggle="modal"
+              <img data-src="./assets/images/roma/7.png" data-toggle="modal"
                 data-target="#lightbox4">
             </div>
             <div class="text-center align-self-center img-event2" data-target="#carousel4" data-slide-to="4">
-              <img data-src="./assets/images/di-marira/hi88-angle-di-maria-5.png" data-toggle="modal"
+              <img data-src="./assets/images/roma/4.png" data-toggle="modal"
                 data-target="#lightbox4">
             </div>
             <div class="text-center align-self-center img-event1" data-target="#carousel4" data-slide-to="5">
-              <img data-src="./assets/images/di-marira/hi88-angle-di-maria-6.png" data-toggle="modal"
+              <img data-src="./assets/images/roma/3.png" data-toggle="modal"
                 data-target="#lightbox4">
             </div>
             <div class="text-center align-self-center img-event2" data-target="#carousel4" data-slide-to="6">
-              <img data-src="./assets/images/di-marira/hi88-angle-di-maria-7.png" data-toggle="modal"
+              <img data-src="./assets/images/roma/8.png" data-toggle="modal"
                 data-target="#lightbox4">
             </div>
             <div class="text-center align-self-center img-event1" data-target="#carousel4" data-slide-to="7">
-              <img data-src="./assets/images/di-marira/hi88-angle-di-maria-8.png" data-toggle="modal"
+              <img data-src="./assets/images/roma/6.png" data-toggle="modal"
                 data-target="#lightbox4">
             </div>
           </div>
@@ -534,35 +816,35 @@
                   <div class="carousel-inner" id="carousel4">
                     <div class="carousel-item active">
                       <img class="d-block w-100 img-fluid imageHeight"
-                        data-src="./assets/images/di-marira/album-1-min.jpg">
+                        data-src="./assets/images/roma/1.png">
                     </div>
                     <div class="carousel-item">
                       <img class="d-block w-100 img-fluid imageHeight"
-                        data-src="./assets/images/di-marira/album-2-min.jpg">
+                        data-src="./assets/images/roma/2.png">
                     </div>
                     <div class="carousel-item">
                       <img class="d-block w-100 img-fluid imageHeight"
-                        data-src="./assets/images/di-marira/album-3-min.jpg">
+                        data-src="./assets/images/roma/5.png">
                     </div>
                     <div class="carousel-item">
                       <img class="d-block w-100 img-fluid imageHeight"
-                        data-src="./assets/images/di-marira/hi88-angle-di-maria-4.png">
+                        data-src="./assets/images/roma/7.png">
                     </div>
                     <div class="carousel-item">
                       <img class="d-block w-100 img-fluid imageHeight"
-                        data-src="./assets/images/di-marira/album-5-min.jpg">
+                        data-src="./assets/images/roma/4.png">
                     </div>
                     <div class="carousel-item">
                       <img class="d-block w-100 img-fluid imageHeight"
-                        data-src="./assets/images/di-marira/album-6-min.jpg">
+                        data-src="./assets/images/roma/3.png">
                     </div>
                     <div class="carousel-item">
                       <img class="d-block w-100 img-fluid imageHeight"
-                        data-src="./assets/images/di-marira/album-7-min.jpg">
+                        data-src="./assets/images/roma/8.png">
                     </div>
                     <div class="carousel-item">
                       <img class="d-block w-100 img-fluid imageHeight"
-                        data-src="./assets/images/di-marira/hi88-angle-di-maria-8.png">
+                        data-src="./assets/images/roma/6.png">
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carousel4" role="button" data-slide="prev">
@@ -578,7 +860,9 @@
         </div>
       </div>
   </main>
-
+  <div>
+    <img src="./assets/images/roma/Hi88androma.png" alt="">
+  </div>
   <footer id="footer">
     <div class="container">
       <div class="main-wrap">
@@ -618,18 +902,20 @@
               </div>
             </div>
           </div>
-
-          <div class="right">
-            <div class="footer-endorser">
+          <div class="right" style="margin-top: 40px;">
+            <div class="footer-endorser" style="margin-top: 20px;">
               <div class="group-ambassador">
                 <div class="ambassador">
-                  <img src="./assets/image_footer/ambassador-hi88.png" alt="" srcset="">
+                  <img src="./assets/images/footer/1.png" alt="" srcset="">
+                </div>
+                <div class="ambassador">
+                  <img src="./assets/images/footer/2.png" alt="" srcset="">
                 </div>
               </div>
-
             </div>
           </div>
         </div>
+        
 
         <div class="footer-main2">
           <div class="team-partner">
@@ -704,7 +990,9 @@
           <a href="#">
             Những Câu Hỏi Thường Gặp</a>
         </div>
-
+        <div class="footer-legal-info dp-pc">
+          <p style="font-size: 18px;font-weight: 400;color:#26A9E0 ; text-align: center;">HI88 được sở hữu và vận hành bởi Cyber Labs B.V., một công ty được đăng ký tại Curaçao với số đăng ký 166785 và địa chỉ đăng ký tại: Zuikertuintjeweg Z/N,<br> Curaçao. Cyber Labs B.V. được cấp phép và quản lý bởi Curaçao Gaming Authority (CGA) với số giấy phép: OGL/2024/1696/1055, được cấp vào ngày <br> 13/03/2025. Dịch vụ tin cậy và được đại diện bởi <a href="https://igagroup.com" style="color:#26A9E0 ; text-decoration: underline;" target="_blank">https://igagroup.com</a></p>
+      </div>
       </div>
     </div>
   </footer>
@@ -712,101 +1000,86 @@
 
   <footer id="footer-mb">
     <div class="container">
-      <div class="footer-mb-wrap">
-
-        <div class="download-taiapp">
-          <div class="wp-img-ds">
-            <img src="./assets/image_footer/ds-hi88.png" alt="" srcset="">
-          </div>
-
-          <div class="download-app">
-            <div class="wp-title">
-              <img src="./assets/image_footer/tt-download.png" alt="">
-            </div>
-
-            <div class="btn-downloads">
-              <a href="https://hi6789.com/taiapp" target="_blank" class="btn-link-ft">
-                <div class="btn-icon">
-                  <img src="./assets/image_footer/icon-android.png" alt="" srcset="">
-                </div>
-
-                <div class="wp-title-link">
-                  <span>
-                    CÀI ĐẶT THIẾT BỊ ANDROID
-                  </span>
-                </div>
-              </a>
-
-              <a href="https://hi6789.com/taiapp" target="_blank" class="btn-link-ft">
-                <div class="btn-icon">
-                  <img src="./assets/image_footer/icon-ios.png" alt="" srcset="">
-                </div>
-
-                <div class="wp-title-link">
-                  <span>
-                    CÀI ĐẶT THIẾT BỊ IOS
-                  </span>
-                </div>
-              </a>
-            </div>
-          </div>
+        <div class="footer-mb-wrap" style="padding: 0 10px;">
+          <div class="partner-title" style="color: #26A9E0;font-weight: 500;";">Đối Tác Chính Thức</div>
+          <div class="download-taiapp1">
+            <img src="./assets/images/footer/doitacchinhthuc.png" alt="">
         </div>
-
-        <ul class="list-multimedia">
-          <li class="item-media">
-            <h3 class="title">
-              GIẤY PHÉP
-            </h3>
-
-            <div class="media-image">
-              <img src="./assets/image_footer/license-ft-01.png" alt="" srcset="">
-            </div>
-          </li>
-
-          <li class="item-media">
-            <h3 class="title">
-              BẢO VỆ
-            </h3>
-
-            <div class="media-image">
-              <img class="w-65" src="./assets/image_footer/protect-ft-01.png" alt="" srcset="">
-            </div>
-          </li>
-
-          <li class="item-media">
-            <h3 class="title">
-              CHƠI CÓ TRÁCH NHIỆM
-            </h3>
-
-            <div class="media-image">
-              <img class="w-90" src="./assets/image_footer/18fun-ft-01.png" alt="" srcset="">
-            </div>
-          </li>
-
-          <li class="item-media">
-            <h3 class="title">
-              THEO DÕI CHÚNG TÔI
-            </h3>
-
-            <div class="media-image">
-              <a href="" class="w-17">
-                <img class="w-100" src="./assets/image_footer/fb-ft-01.png" alt="" srcset="">
-              </a>
-
-              <a href="" class="w-17">
-                <img class="w-100" src="./assets/image_footer/yt-ft-01.png" alt="" srcset="">
-              </a>
-
-              <a href="" class="w-17">
-                <img class="w-100" src="./assets/image_footer/tele-ft-01.png" alt="" srcset="">
-              </a>
-            </div>
-          </li>
-
-        </ul>
+        <div class="footer-news-banner" style="display: flex;gap: 10px; margin-bottom: 5px;">
+          <img src="./assets/images/footer/tintuc.png" style="width: auto; max-height: 20px;" alt="">
+          <div class="news-text" style="color: #26A9E0;font-weight: 500;">Hi88 Chiến Dịch Thương Hiệu</div>
+        </div>
+        <div class="download-taiapp1">
+          <img id="roma-toggle" src="./assets/images/footer/romaclose.jpg" alt="" style="cursor: pointer;">
       </div>
+      <div class="partner-title" style="color: #26A9E0;font-weight: 500;">Đại Sứ Thương Hiệu</div>
+      <div class="download-taiapp1">
+        <img src="./assets/images/footer/ds-hi88.png" alt="">
     </div>
-  </footer>
+    <div class="footer-news-banner" style="display: flex;gap: 10px; margin-bottom: 5px;">
+      <img src="./assets/images/footer/tintuc.png" style="width: auto; max-height: 20px;" alt="">
+      <div class="news-text" style="color: #26A9E0;font-weight: 500;">Hi88 Chiến Dịch Thương Hiệu</div>
+    </div>
+    <div class="download-taiapp1">
+      <img id="maria-toggle" src="./assets/images/footer/mariaclose.jpg" alt="" style="cursor: pointer;">
+  </div>
+
+
+            <ul class="list-multimedia">
+                <li class="item-media">
+                    <h3 class="title">
+                        GIẤY PHÉP
+                    </h3>
+
+                    <div class="media-image">
+                        <img src="./assets/image_footer/license-ft-01.png" alt="" srcset="">
+                    </div>
+                </li>
+
+                <li class="item-media">
+                    <h3 class="title">
+                        BẢO VỆ
+                    </h3>
+
+                    <div class="media-image">
+                        <img class="w-65" src="./assets/image_footer/protect-ft-01.png" alt="" srcset="">
+                    </div>
+                </li>
+
+                <li class="item-media">
+                    <h3 class="title">
+                        CHƠI CÓ TRÁCH NHIỆM
+                    </h3>
+
+                    <div class="media-image">
+                        <img class="w-90" src="./assets/image_footer/18fun-ft-01.png" alt="" srcset="">
+                    </div>
+                </li>
+
+                <li class="item-media">
+                    <h3 class="title">
+                        THEO DÕI CHÚNG TÔI
+                    </h3>
+
+                    <div class="media-image">
+                        <a href="" class="w-17">
+                            <img class="w-100" src="./assets/image_footer/fb-ft-01.png" alt="" srcset="">
+                        </a>
+
+                        <a href="" class="w-17">
+                            <img class="w-100" src="./assets/image_footer/yt-ft-01.png" alt="" srcset="">
+                        </a>
+
+                        <a href="" class="w-17">
+                            <img class="w-100" src="./assets/image_footer/tele-ft-01.png" alt="" srcset="">
+                        </a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</footer>
   <!-- 
   <div class="handle">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 70">
@@ -826,11 +1099,197 @@
       $('.text-readmore').hide();
       $('#readmore').show();
     });
+    $('#roma-toggle').on('click', function () {
+      var currentSrc = $(this).attr('src');
+      if (currentSrc.includes('romaclose.jpg')) {
+          $(this).attr('src', './assets/images/footer/romaopen.jpg');
+      } else if (currentSrc.includes('romaopen.jpg')) {
+          $(this).attr('src', './assets/images/footer/romaclose.jpg');
+      }
+  });
+
+  // Toggle Maria image
+  $('#maria-toggle').on('click', function () {
+      var currentSrc = $(this).attr('src');
+      if (currentSrc.includes('mariaclose.jpg')) {
+          $(this).attr('src', './assets/images/footer/mariaopen.jpg');
+      } else if (currentSrc.includes('mariaopen.jpg')) {
+          $(this).attr('src', './assets/images/footer/mariaclose.jpg');
+      }
+  });
   </script>
 
   <script>
     $(document).ready(function () {
       AOS.init();
+      
+      // Xác định video ở giữa để phóng to (mobile)
+      function updateCenterHighlight() {
+        if (window.innerWidth > 767) return;
+        const row = document.querySelector('.video-mobile-container .video-list-row');
+        if (!row) return;
+        const items = Array.from(row.querySelectorAll('.video-list-item'));
+        if (!items.length) return;
+        const mid = row.scrollLeft + row.clientWidth / 2;
+        let closest = null;
+        let closestDiff = Infinity;
+        items.forEach((item) => {
+          const start = item.offsetLeft;
+          const end = start + item.offsetWidth;
+          const center = (start + end) / 2;
+          const diff = Math.abs(center - mid);
+          if (diff < closestDiff) {
+            closestDiff = diff;
+            closest = item;
+          }
+        });
+        items.forEach((it) => it.classList.remove('is-center'));
+        if (closest) closest.classList.add('is-center');
+      }
+
+      let centerScrollHandler = null;
+      function bindCenterHighlight() {
+        const row = document.querySelector('.video-mobile-container .video-list-row');
+        if (!row) return;
+        if (centerScrollHandler) {
+          row.removeEventListener('scroll', centerScrollHandler);
+        }
+        centerScrollHandler = () => updateCenterHighlight();
+        row.addEventListener('scroll', centerScrollHandler);
+        setTimeout(updateCenterHighlight, 60);
+      }
+
+      // Di chuyển video ra khỏi banner trên mobile
+      function moveVideosOnMobile() {
+        const videoOverlay = $('.carousel-item .video-overlay').first();
+        const videoListRow = $('.carousel-item .video-list-row').first();
+        const hi88RomaDiv = $('main').find('div').has('img[src*="Hi88androma.png"]').first();
+        
+        if (window.innerWidth <= 767) {
+          // Chỉ di chuyển nếu chưa di chuyển
+          if (videoOverlay.length && videoOverlay.parent().hasClass('position-relative')) {
+            // Tạo wrapper mới sau Hi88androma.png
+            if ($('.video-mobile-container').length === 0 && hi88RomaDiv.length) {
+              const wrapper = $('<div class="video-mobile-container"></div>');
+              hi88RomaDiv.after(wrapper);
+              wrapper.append(videoOverlay.clone());
+              wrapper.append(videoListRow.clone());
+              videoOverlay.hide();
+              videoListRow.hide();
+              setTimeout(bindCenterHighlight, 50);
+            }
+          }
+        } else {
+          // Desktop: hiển thị lại video trong banner và xóa wrapper mobile
+          $('.video-mobile-container').remove();
+          videoOverlay.show();
+          videoListRow.show();
+        }
+      }
+      
+      // Chạy khi load và resize
+      moveVideosOnMobile();
+      $(window).on('resize', function() {
+        setTimeout(moveVideosOnMobile, 100);
+        setTimeout(bindCenterHighlight, 120);
+      });
+      
+      // Infinite scroll cho 4 video - chỉ ở màn hình ≤ 767px
+      function initInfiniteScroll() {
+        // Chỉ chạy khi màn hình ≤ 767px
+        if (window.innerWidth > 767) {
+          // Xóa các clone nếu có (khi resize từ mobile lên desktop)
+          const videoListRow = document.querySelector('.carousel-item .video-list-row');
+          if (videoListRow) {
+            const items = videoListRow.querySelectorAll('.video-list-item');
+            if (items.length > 4) {
+              // Xóa các clone
+              for (let i = 4; i < items.length; i++) {
+                items[i].remove();
+              }
+            }
+            // Reset scroll về đầu
+            videoListRow.scrollLeft = 0;
+          }
+          return;
+        }
+        
+        // Tìm video-list-row trong banner hoặc trong mobile container
+        let videoListRow = document.querySelector('.video-mobile-container .video-list-row');
+        if (!videoListRow) {
+          videoListRow = document.querySelector('.carousel-item .video-list-row');
+        }
+        if (!videoListRow) return;
+        
+        // Xóa các clone cũ nếu có
+        const allItems = videoListRow.querySelectorAll('.video-list-item');
+        if (allItems.length > 4) {
+          for (let i = 4; i < allItems.length; i++) {
+            allItems[i].remove();
+          }
+        }
+        
+        // Nhân đôi các video items để tạo infinite scroll
+        const items = videoListRow.querySelectorAll('.video-list-item');
+        if (items.length > 0 && items.length === 4) {
+          items.forEach(item => {
+            const clone = item.cloneNode(true);
+            videoListRow.appendChild(clone);
+          });
+        }
+        
+        // Tính toán vị trí reset (nửa chừng của scroll width)
+        function handleScroll() {
+          const scrollWidth = videoListRow.scrollWidth;
+          const clientWidth = videoListRow.clientWidth;
+          const maxScroll = scrollWidth - clientWidth;
+          const resetPoint = maxScroll / 2;
+          
+          // Khi scroll đến reset point, quay lại đầu một cách mượt mà
+          if (videoListRow.scrollLeft >= resetPoint) {
+            videoListRow.scrollLeft = videoListRow.scrollLeft - resetPoint;
+          }
+          // Khi scroll về đầu (scrollLeft < 0 hoặc gần 0), nhảy đến reset point
+          else if (videoListRow.scrollLeft <= 0) {
+            videoListRow.scrollLeft = resetPoint;
+          }
+        }
+        
+        // Xóa event listener cũ nếu có
+        videoListRow.removeEventListener('scroll', handleScroll);
+        // Lắng nghe sự kiện scroll
+        videoListRow.addEventListener('scroll', handleScroll);
+        
+        // Khởi tạo vị trí ban đầu ở giữa để có thể scroll cả 2 chiều
+        setTimeout(() => {
+          const scrollWidth = videoListRow.scrollWidth;
+          const clientWidth = videoListRow.clientWidth;
+          const maxScroll = scrollWidth - clientWidth;
+          if (maxScroll > 0) {
+            videoListRow.scrollLeft = maxScroll / 2;
+          }
+        }, 100);
+
+        // Bind highlight center sau khi clone
+        setTimeout(bindCenterHighlight, 80);
+      }
+      
+      // Chạy lần đầu
+      setTimeout(() => {
+        initInfiniteScroll();
+      }, 200);
+      
+      // Re-init khi resize
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          moveVideosOnMobile();
+          setTimeout(() => {
+            initInfiniteScroll();
+          }, 200);
+        }, 300);
+      });
     });
   </script>
   <script src="./assets/js/aos.js"></script>

@@ -371,8 +371,21 @@ footer .footer-copy {
     font-size: 14px;
   }
 }
+.partner-title {
+  color: #25ABE0;
+  font-size: 22px;
+  font-weight: 700;
+  margin-left: 8px;
+  padding: 5px 0 5px 0;
+  font-family: 'Roboto', sans-serif;
+}
 
 @media screen and (max-width: 767px) {
+  .partner-title {
+    font-size: 18px;
+    margin-left: 0;
+    padding: 0 0 5px 0;
+  }
   .d-flex {
     display: flex !important;
   }
@@ -495,6 +508,7 @@ footer .footer-copy {
     margin-right: 25px;
   }
 }
+
 @media screen and (max-width: 575px) {
   .img-chu-ky {
     padding-left: 130px;

@@ -93,6 +93,7 @@ body {
     transition: all .5s;
     overflow: hidden;
     background-size: cover;
+
 }
 
 .list-group .item-group .wp-thumb-nail.active {
