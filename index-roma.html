@@ -225,7 +225,6 @@
       }
       .video-list-row {
         gap: 10px !important;
-        padding: 10px !important;
       }
     }
     /* Fix video overlay không bị rớt khỏi banner */
@@ -262,7 +261,6 @@
         position: relative !important;
         width: 100% !important;
         height: auto !important;
-        padding: 20px !important;
         margin: 0 !important;
       }
       .video-mobile-container .video-overlay .video-container {
@@ -280,37 +278,34 @@
         overflow-y: hidden !important;
         align-items: center !important;
         gap: 0 !important;
-        padding: 16px 0 !important;
+        padding: 0 !important; /* Tắt padding top và bottom để các video không cách xa */
         background: transparent !important;
         margin: 0 !important;
         -webkit-overflow-scrolling: touch !important;
         scroll-behavior: auto !important;
+        overscroll-behavior-x: contain;
       }
       .video-mobile-container .video-list-item {
-        flex: 0 0 70% !important;
-        max-width: 60% !important;
-        min-width: 60% !important;
+        flex: 0 0 65% !important;
+        max-width: 65% !important;
+        min-width: 65% !important;
         position: relative !important;
         transition: all 0.35s ease !important;
         flex-shrink: 0 !important;
         z-index: 1 !important;
-        transform: scale(0.9) !important;
-        opacity: 0.85 !important;
-        filter: brightness(0.9) !important;
-        margin-left: -32px !important;
+        transform: scale(0.85) translateZ(0) !important;
+        opacity: 0.7 !important;
+        filter: brightness(0.8) !important;
+        margin-right: -10% !important; 
       }
       .video-mobile-container .video-list-item:first-child {
         margin-left: 0 !important;
       }
       .video-mobile-container .video-list-item.is-center {
-        transform: scale(1.08) !important;
-        z-index: 3 !important;
-        margin-left: -20px !important;
-        margin-right: -20px !important;
-        box-shadow: none !important;
+        transform: scale(1.05) translateZ(100px) !important;
+        z-index: 99 !important;
         opacity: 1 !important;
         filter: none !important;
-        overflow: hidden !important;
       }
       .video-mobile-container .video-list-item video {
         border-radius: 12px !important;
@@ -420,129 +415,404 @@
         min-height: 140px !important;
       }
     }
-    /* Fix thumbnail không tràn ra khỏi khung xanh */
-    .site-bar {
-      overflow: hidden !important;
+    /* Style cho sitebar mới */
+    .sitebar {
+      width: 460px;
+      height: 430px;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      position: fixed;
+      z-index: 9999;
+      transition: left 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
     }
-    .list-group .item-group {
-      overflow: hidden !important;
+
+    .sitebar.hide {
+      left: -500px;
     }
-    .list-group .item-group .box {
-      overflow: hidden !important;
+
+    .box-sitebar {
+      width: 100px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      border-radius: 16px;
+      background: linear-gradient(180deg, #6FD7FF 0%, #2F9BD9 100%);
+      box-shadow: 0 18px 35px rgba(0, 117, 174, 0.28), 0 2px 6px rgba(0, 0, 0, 0.12);
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+      padding: 10px 8px;
+      pointer-events: all;
     }
-    .list-group .item-group .wp-thumb-nail {
-      overflow: hidden !important;
-      box-sizing: border-box !important;
+
+    .box-panel {
+      width: 100%;
+      height: 430px;
+      position: relative;
     }
-    .list-group .item-group .wp-thumb-nail img {
-      max-width: 100% !important;
-      max-height: 100% !important;
-      object-fit: cover !important;
+
+    .box-panel-milan {
+      width: 240px;
+      height: 54px;
+      border-radius: 12px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+      color: #0b3954;
+      font-weight: 700;
+      letter-spacing: 0.2px;
     }
-    /* Responsive cho site-bar - thu nhỏ gọn hơn */
-    @media (max-width: 1199px) {
-      .site-bar {
-        width: 85px !important;
-        height: auto !important;
-        padding: 15px 6px !important;
-        min-height: fit-content !important;
+
+    .box-panel-milan p {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #8adfff 0%, #4cb4e8 100%);
+      display: none;
+      padding: 0 12px;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      color: #0b3954;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+      font-family: 'SF Pro Display', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .box-panel-laliga p {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .box-panel-okvip {
+      width: 240px;
+      height: 54px;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+      color: #0b3954;
+      font-family: 'SF Pro Display', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+    }
+
+    .box-panel-okvip img {
+      width: 96%;
+      object-fit: contain;
+    }
+
+    .box-panel-okvip p {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .box-panel-laliga {
+      width: 240px;
+      height: 54px;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #a1ffce 0%, #faffd1 100%);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+      color: #0b3954;
+      font-family: 'SF Pro Display', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      
+    }
+
+    .milan-ico,
+    .okvip-ico,
+    .laliga-ico {
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), filter 0.35s ease;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px;
+      filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.18));
+    }
+
+    .milan-ico img,
+    .okvip-ico img,
+    .laliga-ico img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .milan-item.active .milan-ico,
+    .okvip-item.active .okvip-ico,
+    .laliga-item.active .laliga-ico {
+      width: 100%;
+      transform: translateX(26%) scale(1.02);
+      filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.24));
+    }
+
+    .box-panel-milan.active p {
+      display: flex;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .box-panel-milan.active {
+      display: flex;
+      animation: floatIn 0.55s ease;
+    }
+    
+    /* Okvip và Laliga panel có animation riêng để giữ translateY(-50%) */
+    .box-panel-okvip.active,
+    .box-panel-laliga.active {
+      display: flex;
+      animation: floatIn 0.55s ease;
+    }
+
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateX(-22px) translateY(-50%) scale(0.96); }
+      to { opacity: 1; transform: translateX(0) translateY(-50%) scale(1); }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
       }
-      .site-bar:before {
-        width: 50px !important;
-      }
-      .list-group {
-        gap: 6px !important;
-        padding: 8px 0px !important;
-      }
-      .list-group .item-group .wp-thumb-nail {
-        width: 45px !important;
-        height: 45px !important;
-        margin-left: -7.5px !important;
-      }
-      .list-group .item-group .wp-thumb-nail.active {
-        width: 55px !important;
-        height: 55px !important;
-        margin-left: 0 !important;
+      to {
+        opacity: 1;
+        transform: translateX(0);
       }
     }
     
-    @media (max-width: 767px) {
-      .site-bar {
-        width: 60px !important;
-        padding: 10px 3px !important;
-        left: 3px !important;
+    /* Animation riêng cho okvip panel để giữ translateY(-50%) */
+    .box-panel-okvip.active {
+      animation: fadeInOkvip 0.5s ease-in-out;
+    }
+    
+    @keyframes fadeInOkvip {
+      from {
+        opacity: 0;
+        transform: translateX(-20px) translateY(-50%);
       }
-      .site-bar:before {
-        width: 40px !important;
-      }
-      .list-group {
-        gap: 4px !important;
-        padding: 5px 0px !important;
-      }
-      .list-group .item-group .wp-thumb-nail {
-        width: 35px !important;
-        height: 35px !important;
-        margin-left: -20px !important;
-      }
-      .list-group .item-group .wp-thumb-nail.active {
-        width: 42px !important;
-        height: 42px !important;
-        margin-left: 0 !important;
-      }
-      /* Giảm kích thước chữ các tiêu đề từ 767px trở xuống */
-      .title-section .title h2 {
-        font-size: 20px !important;
-      }
-      .title-section .title {
-        padding: 8px 60px !important;
+      to {
+        opacity: 1;
+        transform: translateX(0) translateY(-50%);
       }
     }
-    @media (max-width: 575px) {
-      .site-bar {
-        width: 50px !important;
-        padding: 8px 2px !important;
-        left: 2px !important;
+    
+    /* Animation riêng cho laliga panel để giữ translateY(-50%) */
+    .box-panel-laliga.active {
+      animation: fadeInLaliga 0.5s ease-in-out;
+    }
+    
+    @keyframes fadeInLaliga {
+      from {
+        opacity: 0;
+        transform: translateX(-20px) translateY(-50%);
       }
-      .site-bar:before {
-        width: 35px !important;
-      }
-      .list-group {
-        gap: 3px !important;
-        padding: 4px 0px !important;
-      }
-      .list-group .item-group .wp-thumb-nail {
-        width: 30px !important;
-        height: 30px !important;
-        margin-left: -15px !important;
-      }
-      .list-group .item-group .wp-thumb-nail.active {
-        width: 36px !important;
-        height: 36px !important;
-        margin-left: 0 !important;
+      to {
+        opacity: 1;
+        transform: translateX(0) translateY(-50%);
       }
     }
-    @media (max-width: 480px) {
-      .site-bar {
-        width: 45px !important;
-        padding: 6px 2px !important;
-        left: 2px !important;
+
+    .sitebar-item-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    .box-sitebar-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .box-panel-milan,
+    .box-panel-okvip,
+    .box-panel-laliga {
+      position: absolute;
+      left: 110%;
+      z-index: 1;
+      margin-left: 10px;
+    }
+
+    .box-panel-milan { 
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .box-panel-okvip { 
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .box-panel-laliga { 
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @media screen and (max-width: 768px) {
+      .sitebar {
+        width: 270px;
+        height: 220px;
+        left: 8px;
       }
-      .site-bar:before {
-        width: 30px !important;
+      .box-sitebar {
+        width: 68px;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 6px;
+        border-radius: 14px;
       }
-      .list-group {
-        gap: 2px !important;
-        padding: 3px 0px !important;
+      .box-sitebar .sitebar-item-container {
+        width: 100%;
       }
-      .list-group .item-group .wp-thumb-nail {
-        width: 26px !important;
-        height: 26px !important;
+      .box-sitebar .box-sitebar-content {
+        width: 100%;
+        height: 100%;
       }
-      .list-group .item-group .wp-thumb-nail.active {
-        width: 32px !important;
-        height: 32px !important;
-        margin-left: 0 !important;
+      .box-sitebar .milan-ico img,
+      .box-sitebar .okvip-ico img,
+      .box-sitebar .laliga-ico img {
+        width: 100%;
+        height: auto;
       }
+      .box-panel-milan {
+        top: 50%;
+        transform: translateY(-50%);
+        width: 200px;
+        height: 48px;
+        border-radius: 12px;
+        font-size: 14px;
+      }
+      .box-panel-okvip {
+        top: 50%;
+        transform: translateY(-50%);
+        width: 200px;
+        height: 46px;
+        font-size: 14px;
+        text-align: center;
+        border-radius: 12px;
+      }
+      .box-panel-okvip img {
+        width: auto;
+        max-height: 28%;
+        height: auto;
+      }
+      .box-panel-laliga {
+        top: 50%;
+        transform: translateY(-50%);
+        width: 200px;
+        height: 46px;
+        font-size: 14px;
+        text-align: center;
+        border-radius: 12px;
+      }
+      .box-panel-laliga img {
+        width: auto;
+        max-height: 82%;
+        height: auto;
+      }
+      .box-panel-milan,
+      .box-panel-okvip,
+      .box-panel-laliga {
+        margin-left: 10px;
+      }
+      .box-panel-milan p {
+        width: 100%;
+        height: 100%;
+        padding: 0px 10px;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+      }
+      .box-panel-okvip p {
+        font-size: 14px;
+      }
+      .box-panel-laliga p {
+        font-size: 14px;
+        padding: 0 10px;
+      }
+    }
+
+    .box-panel-milan p,
+    .box-panel-okvip img,
+    .box-panel-laliga img {
+      cursor: pointer;
+    }
+
+    /* Typography thống nhất cho panel text */
+    .box-panel-milan p,
+    .box-panel-okvip p,
+    .box-panel-laliga p {
+      font-family: 'SF Pro Display', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    /* Style cho các thành phần điều khiển Sidebar */
+    .icon-close {
+      font-size: 24px;
+      line-height: 1;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+
+    .handle {
+      position: fixed;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #61BCE4;
+      color: white;
+      padding: 10px 5px;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      z-index: 9998;
+      display: none;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-weight: bold;
+      letter-spacing: 2px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .handle:hover {
+      padding-left: 10px;
+      background: #26A9E0;
     }
   </style>
   <script src="./assets/js/jquery_3.6.0_jquery.min.js"></script>
@@ -553,64 +823,44 @@
 </head>
 
 <body>
-  <div class="site-bar">
-    <div class="list-group slider-top">
-      <div
-      class="item-group handle-click"
-      data-url="./assets/images/roma/logositebar.png"
-      data-status="1"
-    >
-      <a href="/index-roma.html" class="box">
-        <div class="wp-thumb-nail">
-          <img data-src="./assets/images/roma/logositebar.png" />
+  <!-- Nút handle độc lập để mở lại khi sidebar đã ẩn -->
+  <div class="handle">
+    
+  </div>
+
+  <div class="sitebar hide">
+    <!-- Nút đóng sidebar -->
+    
+    <div class="box-sitebar">
+      <div class="sitebar-item-container">
+        <div class="box-sitebar-content milan-item" onclick="window.location.href='/index-roma.html'" style="cursor: pointer;">
+          <div class="milan-ico">
+            <img src="./assets/images/roma/logositebar.png" alt="">
+           
+          </div>
         </div>
-
-        <div class="wp-title">
-          <span class="tilte">A.S. Roma</span>
-          <span>Đối tác khu vực</span>
+        <div class="box-panel-milan">
+          <p onclick="window.location.href='/index-roma.html'">Đối tác khu vực</p>
         </div>
-      </a>
-    </div>
-      <div
-        class="item-group handle-click"
-        data-url="./assets/images/di-marira/angle-di-maria.png"
-        data-status="1"
-      >
-        <a href="/index.html" class="box">
-          <div class="wp-thumb-nail">
-            <img data-src="./assets/images/di-marira/angle-di-maria.png" />
-          </div>
-
-          <div class="wp-title">
-            <span class="tilte">Angle Di Maria</span>
-            <span>Đại sứ thương hiệu</span>
-          </div>
-        </a>
       </div>
-     
-    </div>
-
-    <div class="list-group slider-bottom">
-      <div
-            class="item-group"
-            data-url="./assets/images/clb-moi.jpg"
-            data-url-sm="./assets/images/ds-bian.jpg"
-          >
+      <div class="sitebar-item-container">
+        <div class="box-sitebar-content okvip-item" onclick="window.location.href='/index.html'" style="cursor: pointer;">
+          <div class="okvip-ico">
+            <img src="./assets/images/di-marira/angle-di-maria.png" alt="Biểu tượng OKVIP">
+          </div>
+        </div>
+        <div class="box-panel-okvip">
+          <p onclick="window.location.href='/index.html'">Đại sứ thương hiệu</p>
+        </div>
       </div>
-
-      <div
-        class="item-group"
-        data-url="./assets/images/clb-moi.jpg"
-        data-url-sm="./assets/images/ds-bian.jpg"
-      >
-        <div class="box">
-          <div class="wp-thumb-nail">
-            <img data-src="./assets/images/icon-ol-plus-2.png" />
+      <div class="sitebar-item-container">
+        <div class="box-sitebar-content laliga-item">
+          <div class="laliga-ico">
+            <img src="./assets/images/icon-ol-plus-2.png" alt="Biểu tượng La Liga">
           </div>
-
-          <div class="wp-title">
-            <span class="tilte">CÙNG CHỜ ĐÓN CÂU LẠC BỘ MỚI</span>
-          </div>
+        </div>
+        <div class="box-panel-laliga">
+          <p>Cùng chờ đón câu lạc bộ mới</p>
         </div>
       </div>
     </div>
@@ -634,7 +884,7 @@
               <!-- Video overlay với absolute positioning -->
               <div class="video-overlay">
                 <div class="video-container" style="max-width: 70%;">
-                  <video poster="./assets/images/roma/banner-slide-1.png" preload="auto" autoplay loop muted
+                  <video poster="./assets/images/roma/gioithieu.png" preload="auto" autoplay loop muted
                     controls style="width: 100%; height: auto;">
                     <source src="https://media.njenjaxje82berb45ndi12kdcnjdk.com/public/hi88/site-daisu/6076c4cd-cc30-4700-ae70-61121409c9ee.mp4" type="video/mp4">
                     Your browser does not support HTML5 video.
@@ -645,36 +895,36 @@
               <div class="video-list-row" style="position: absolute; bottom: 0; left: 0; right: 0; gap: 20px; padding: 15px 20px; background: transparent;">
                 <div class="video-list-item" style="max-width: 360px; flex: 0 0 360px;">
                   <div class="video-container-small" style="background: transparent;">
-                    <video poster="./assets/images/roma/banner-slide-1.png" preload="auto" autoplay loop muted
+                    <video poster="./assets/images/roma/chucsinhnhatimage.png" preload="none" loop muted
                       controls style="width: 100%; height: auto; background: transparent; box-shadow: none;">
-                      <source src="https://media.njenjaxje82berb45ndi12kdcnjdk.com/public/hi88/site-daisu/bfcc7d6a-931c-4ebd-9651-388adc01545d.mp4" type="video/mp4">
+                      <source data-src="https://media.njenjaxje82berb45ndi12kdcnjdk.com/public/hi88/site-daisu/bfcc7d6a-931c-4ebd-9651-388adc01545d.mp4" type="video/mp4">
                       Your browser does not support HTML5 video.
                     </video>
                   </div>
                 </div>
                 <div class="video-list-item" style="max-width: 360px; flex: 0 0 360px;">
                   <div class="video-container-small" style="background: transparent;">
-                    <video poster="./assets/images/roma/banner-slide-1.png" preload="auto" autoplay loop muted
+                    <video poster="./assets/images/roma/giangsinhimage.png" preload="none" loop muted
                       controls style="width: 100%; height: auto; background: transparent; box-shadow: none;">
-                      <source src="https://media.njenjaxje82berb45ndi12kdcnjdk.com/public/hi88/site-daisu/46bb72b5-305b-4de1-8692-5f3bb72bda06.mp4" type="video/mp4">
+                      <source data-src="https://media.njenjaxje82berb45ndi12kdcnjdk.com/public/hi88/site-daisu/46bb72b5-305b-4de1-8692-5f3bb72bda06.mp4" type="video/mp4">
                       Your browser does not support HTML5 video.
                     </video>
                   </div>
                 </div>
                 <div class="video-list-item" style="max-width: 360px; flex: 0 0 360px;">
                   <div class="video-container-small" style="background: transparent;">
-                    <video poster="./assets/images/roma/banner-slide-1.png" preload="auto" autoplay loop muted
+                    <video poster="./assets/images/roma/seagameimage.png" preload="none" loop muted
                       controls style="width: 100%; height: auto; background: transparent; box-shadow: none;">
-                      <source src="https://media.njenjaxje82berb45ndi12kdcnjdk.com/public/hi88/site-daisu/4e8aec14-d7ec-4813-ac7c-0bc193c5e5d5.mp4" type="video/mp4">
+                      <source data-src="https://media.njenjaxje82berb45ndi12kdcnjdk.com/public/hi88/site-daisu/4e8aec14-d7ec-4813-ac7c-0bc193c5e5d5.mp4" type="video/mp4">
                       Your browser does not support HTML5 video.
                     </video>
                   </div>
                 </div>
                 <div class="video-list-item" style="max-width: 360px; flex: 0 0 360px;">
                   <div class="video-container-small" style="background: transparent;">
-                    <video poster="./assets/images/roma/banner-slide-1.png" preload="auto" autoplay loop muted
+                    <video poster="./assets/images/roma/chuctetimage.png" preload="none" loop muted
                       controls style="width: 100%; height: auto; background: transparent; box-shadow: none;">
-                      <source src="https://media.njenjaxje82berb45ndi12kdcnjdk.com/public/hi88/site-daisu/6cfde3ee-35d0-4c6a-b6b0-6617199b7c2d.mp4" type="video/mp4">
+                      <source data-src="https://media.njenjaxje82berb45ndi12kdcnjdk.com/public/hi88/site-daisu/6cfde3ee-35d0-4c6a-b6b0-6617199b7c2d.mp4" type="video/mp4">
                       Your browser does not support HTML5 video.
                     </video>
                   </div>
@@ -1190,6 +1440,64 @@
     $(document).ready(function () {
       AOS.init();
       
+      // Lazy load video - gom 4 source vào mảng, click vào video nào thì load video đó
+      function initLazyVideoLoad() {
+        const videoSources = new Map();
+
+        // Thu thập nguồn và dọn src để tránh load sẵn
+        $('video source[data-src]').each(function() {
+          const $source = $(this);
+          const url = $source.attr('data-src');
+          videoSources.set(this, url);
+          $source.removeAttr('src');
+        });
+
+        // Gắn handler cho từng video
+        $('video source[data-src]').each(function() {
+          const $source = $(this);
+          const $video = $source.parent('video');
+
+          if ($video.data('lazy-bound')) return;
+          $video.data('lazy-bound', true);
+
+          const loadAndPlay = () => {
+            const vid = $video[0];
+            if (!$video.data('loaded')) {
+              const src = videoSources.get($source[0]) || $source.attr('data-src');
+              $source.attr('src', src);
+              $video.data('loaded', true);
+              vid.load();
+              vid.play().catch((error) => {
+                console.log('Auto-play bị chặn:', error);
+              });
+            } else if (vid.paused) {
+              vid.play().catch((error) => {
+                console.log('Auto-play bị chặn:', error);
+              });
+            }
+          };
+
+          // Click trên video hoặc controls
+          $video.on('click', loadAndPlay);
+          // Nhấn play trong controls
+          $video.on('play', function() {
+            if (!$video.data('loaded')) loadAndPlay();
+          });
+          // Mobile: chạm
+          $video.on('touchstart', function() {
+            if (!$video.data('loaded')) loadAndPlay();
+          });
+        });
+      }
+      
+      // Khởi tạo lazy load cho video
+      initLazyVideoLoad();
+      
+      // Re-init khi có video mới được clone (cho mobile carousel)
+      function reinitLazyVideoLoad() {
+        setTimeout(initLazyVideoLoad, 100);
+      }
+      
       // Theo dõi trạng thái fullscreen của video (để tránh crash khi resize trên mobile)
       let isVideoFullscreen = false;
       const handleEnterFullscreen = () => { isVideoFullscreen = true; };
@@ -1214,43 +1522,327 @@
       }
       bindFullscreenEventsForVideos(document);
       
-      // Xác định video ở giữa để phóng to (mobile)
+      // --- LOGIC XỬ LÝ SITEBAR (DaisuApp) ---
+      const TIMING = {
+          AUTO_HIDE_DELAY: 5000,
+          CLICK_HIDE_DELAY: 10000,
+          ANIMATION_DURATION: 500
+      };
+
+      const BREAKPOINTS = {
+          MOBILE: 768
+      };
+
+      const SELECTORS = {
+          HANDLE: '.handle', 
+          ICON_CLOSE: '.icon-close',
+          SITEBAR: '.sitebar',
+          SITE_BAR: '.sitebar', // Đồng bộ với class HTML hiện tại
+          ITEM_GROUP: '.item-group.handle-click',
+          WP_THUMB_NAIL: '.wp-thumb-nail'
+      };
+
+      const utils = {
+          isMobile: () => window.innerWidth <= BREAKPOINTS.MOBILE,
+          showElement: (selector) => {
+              const el = document.querySelector(selector);
+              if (el) el.style.display = 'block';
+          },
+          hideElement: (selector) => {
+              const el = document.querySelector(selector);
+              if (el) el.style.display = 'none';
+          },
+          addClass: (selector, className) => {
+              const el = document.querySelector(selector);
+              if (el) el.classList.add(className);
+          },
+          removeClass: (selector, className) => {
+              const el = document.querySelector(selector);
+              if (el) el.classList.remove(className);
+          },
+          getElement: (selector) => document.querySelector(selector),
+          getElements: (selector) => document.querySelectorAll(selector)
+      };
+
+      class NavigationPanelManager {
+          constructor() {
+              this.panels = [
+                  { items: '.milan-item', panel: '.box-panel-milan', name: 'milan' },
+                  { items: '.okvip-item', panel: '.box-panel-okvip', name: 'okvip' },
+                  { items: '.laliga-item', panel: '.box-panel-laliga', name: 'laliga' }
+              ];
+              this.init();
+          }
+          init() {
+              this.panels.forEach(config => this.setupPanel(config));
+          }
+          setupPanel(config) {
+              const items = utils.getElements(config.items);
+              const panel = utils.getElement(config.panel);
+              if (!items.length || !panel) return;
+              
+              items.forEach(item => {
+                  item.addEventListener('mouseenter', () => this.activatePanel(item, panel, items));
+                  item.addEventListener('mouseleave', () => this.deactivatePanel(panel, items));
+              });
+              
+              panel.addEventListener('mouseenter', () => this.activatePanel(null, panel, items));
+              panel.addEventListener('mouseleave', () => this.deactivatePanel(panel, items));
+          }
+          activatePanel(item, panel, items) {
+              if (item) item.classList.add('active');
+              panel.classList.add('active');
+              items.forEach(i => i.classList.add('active'));
+          }
+          deactivatePanel(panel, items) {
+              panel.classList.remove('active');
+              items.forEach(i => i.classList.remove('active'));
+          }
+      }
+
+      class SidebarManager {
+          constructor() {
+              this.hideTimeout = null;
+              this.isInitialized = false;
+              this.init();
+          }
+          init() {
+              if (this.isInitialized) return;
+              utils.hideElement(SELECTORS.HANDLE);
+              utils.hideElement(SELECTORS.ICON_CLOSE);
+              
+          // Bật auto-hide cho cả mobile và desktop
+          this.setupMobileBehavior();
+          this.setupAutoHide();
+              
+              // Hiện sidebar ban đầu sau 1s
+              setTimeout(() => this.showSidebar(), 1000);
+              this.isInitialized = true;
+          }
+          setupMobileBehavior() {
+              utils.showElement(SELECTORS.ICON_CLOSE);
+              const handle = utils.getElement(SELECTORS.HANDLE);
+              if (handle) handle.addEventListener('click', () => this.openSidebar());
+              const closeBtn = utils.getElement(SELECTORS.ICON_CLOSE);
+              if (closeBtn) closeBtn.addEventListener('click', () => this.closeSidebar());
+
+            // Bắt đầu auto-hide trên mobile
+            this.startHideTimer();
+          }
+          setupAutoHide() {
+              const sitebar = utils.getElement(SELECTORS.SITEBAR);
+              if (!sitebar) return;
+              sitebar.addEventListener('mouseleave', () => this.startHideTimer());
+              sitebar.addEventListener('mouseenter', () => this.clearHideTimer());
+              
+              const handle = utils.getElement(SELECTORS.HANDLE);
+              if (handle) handle.addEventListener('click', () => this.showSidebar());
+          }
+          startHideTimer() {
+              this.clearHideTimer();
+              this.hideTimeout = setTimeout(() => this.hideSidebar(), TIMING.AUTO_HIDE_DELAY);
+          }
+          clearHideTimer() {
+              if (this.hideTimeout) {
+                  clearTimeout(this.hideTimeout);
+                  this.hideTimeout = null;
+              }
+          }
+          hideSidebar() {
+              utils.addClass(SELECTORS.SITEBAR, 'hide');
+              utils.showElement(SELECTORS.HANDLE);
+          }
+          showSidebar() {
+              utils.removeClass(SELECTORS.SITEBAR, 'hide');
+              utils.hideElement(SELECTORS.HANDLE);
+              this.startHideTimer();
+          }
+          openSidebar() {
+              const siteBar = utils.getElement(SELECTORS.SITE_BAR);
+              if (siteBar) siteBar.style.left = '8px';
+              utils.showElement(SELECTORS.ICON_CLOSE);
+              utils.hideElement(SELECTORS.HANDLE);
+          }
+          closeSidebar() {
+              const siteBar = utils.getElement(SELECTORS.SITE_BAR);
+              if (siteBar) siteBar.style.left = '-500px';
+              utils.showElement(SELECTORS.HANDLE);
+              utils.hideElement(SELECTORS.ICON_CLOSE);
+          }
+      }
+
+      class DaisuApp {
+          constructor() {
+              this.navigationPanelManager = null;
+              this.sidebarManager = null;
+          }
+          init() {
+              this.navigationPanelManager = new NavigationPanelManager();
+              this.sidebarManager = new SidebarManager();
+              console.log('DaisuApp khởi tạo thành công');
+          }
+      }
+
+      const app = new DaisuApp();
+      app.init();
+
+      // --- LOGIC XỬ LÝ VIDEO MOBILE (<= 767px) ---
+      let infiniteScrollActive = false;
+      let isScrolling;
+
       function updateCenterHighlight() {
         if (window.innerWidth > 767) return;
         const row = document.querySelector('.video-mobile-container .video-list-row');
         if (!row) return;
+        
         const items = Array.from(row.querySelectorAll('.video-list-item'));
-        if (!items.length) return;
-        const mid = row.scrollLeft + row.clientWidth / 2;
+        const rowRect = row.getBoundingClientRect();
+        const rowCenter = rowRect.left + rowRect.width / 2;
+
         let closest = null;
-        let closestDiff = Infinity;
-        items.forEach((item) => {
-          const start = item.offsetLeft;
-          const end = start + item.offsetWidth;
-          const center = (start + end) / 2;
-          const diff = Math.abs(center - mid);
-          if (diff < closestDiff) {
-            closestDiff = diff;
+        let minDiff = Infinity;
+
+        items.forEach(item => {
+          const rect = item.getBoundingClientRect();
+          const itemCenter = rect.left + rect.width / 2;
+          const diff = Math.abs(rowCenter - itemCenter);
+          if (diff < minDiff) {
+            minDiff = diff;
             closest = item;
           }
         });
-        items.forEach((it) => it.classList.remove('is-center'));
-        if (closest) closest.classList.add('is-center');
-      }
 
-      let centerScrollHandler = null;
-      function bindCenterHighlight() {
-        const row = document.querySelector('.video-mobile-container .video-list-row');
-        if (!row) return;
-        if (centerScrollHandler) {
-          row.removeEventListener('scroll', centerScrollHandler);
+        items.forEach(it => {
+          it.classList.remove('is-center');
+          // Pause các video không nằm ở giữa
+          const video = it.querySelector('video');
+          if (video && it !== closest) {
+            video.pause();
+          }
+        });
+
+        if (closest) {
+          closest.classList.add('is-center');
+          // Tự động play video ở chính giữa
+          const video = closest.querySelector('video');
+          if (video) {
+            // Kiểm tra nếu video chưa load source (lazy load)
+            if (!video.dataset.loaded) {
+              const source = video.querySelector('source');
+              if (source && source.dataset.src) {
+                source.src = source.dataset.src;
+                video.dataset.loaded = 'true';
+                video.load();
+              }
+            }
+            video.play().catch(err => console.log("Auto-play blocked:", err));
+          }
         }
-        centerScrollHandler = () => updateCenterHighlight();
-        row.addEventListener('scroll', centerScrollHandler);
-        setTimeout(updateCenterHighlight, 60);
+        return closest;
       }
 
-      // Di chuyển video ra khỏi banner trên mobile
+      // Hàm hít video vào giữa - Sử dụng tọa độ tuyệt đối để chính xác 100%
+      function snapToCenter(row) {
+        const closest = updateCenterHighlight();
+        if (!closest) return;
+
+        // Tính toán vị trí scrollLeft cần thiết để đưa closest vào giữa row
+        const rowWidth = row.clientWidth;
+        const itemWidth = closest.offsetWidth;
+        const itemOffsetLeft = closest.offsetLeft;
+        
+        // Công thức chuẩn: Tâm của item trùng với tâm của hàng
+        const targetScrollLeft = itemOffsetLeft - (rowWidth / 2) + (itemWidth / 2);
+        
+        row.scrollTo({
+          left: targetScrollLeft,
+          behavior: 'smooth'
+        });
+      }
+
+      function initInfiniteScroll() {
+        if (window.innerWidth > 767) {
+          infiniteScrollActive = false;
+          return;
+        }
+        
+        const videoListRow = document.querySelector('.video-mobile-container .video-list-row');
+        if (!videoListRow) return;
+
+        // 1. Dọn dẹp bản clone cũ
+        const existingClones = videoListRow.querySelectorAll('.cloned-item');
+        existingClones.forEach(el => el.remove());
+
+        const originalItems = Array.from(videoListRow.querySelectorAll('.video-list-item:not(.cloned-item)'));
+        if (originalItems.length === 0) return;
+
+        // 2. Clone nhóm item (Clone 4 cái cho mỗi đầu)
+        const itemsToClone = originalItems.length;
+        for (let i = 0; i < itemsToClone; i++) {
+          const clone = originalItems[i].cloneNode(true);
+          clone.classList.add('cloned-item');
+          videoListRow.appendChild(clone);
+        }
+        for (let i = itemsToClone - 1; i >= 0; i--) {
+          const clone = originalItems[i].cloneNode(true);
+          clone.classList.add('cloned-item');
+          videoListRow.insertBefore(clone, videoListRow.firstChild);
+        }
+
+        // 3. Thiết lập vị trí ban đầu
+        setTimeout(() => {
+          const allItems = videoListRow.querySelectorAll('.video-list-item');
+          const firstOriginal = allItems[itemsToClone];
+          const secondOriginal = allItems[itemsToClone + 1];
+          
+          const stepWidth = secondOriginal.offsetLeft - firstOriginal.offsetLeft;
+          const totalOriginalWidth = stepWidth * itemsToClone;
+          
+          // Căn giữa video gốc đầu tiên và đẩy nhẹ sang phải một chút cho hợp ý
+          const rowWidth = videoListRow.clientWidth;
+          const itemWidth = firstOriginal.offsetWidth;
+          const baseCenter = firstOriginal.offsetLeft - (rowWidth / 2) + (itemWidth / 2);
+          // dịch nhẹ sang phải ~10% chiều rộng 1 item
+          videoListRow.scrollLeft = baseCenter + itemWidth * 10;
+
+          // 4. Xử lý sự kiện cuộn
+          const handleScroll = () => {
+            const current = videoListRow.scrollLeft ;
+            const maxScroll = videoListRow.scrollWidth - videoListRow.clientWidth;
+            const threshold = stepWidth;
+
+            // Vòng lặp vô tận
+            if (current < threshold / 2) {
+              videoListRow.scrollLeft = current + totalOriginalWidth;
+            } else if (current > maxScroll - threshold / 2) {
+              videoListRow.scrollLeft = current - totalOriginalWidth;
+            }
+            
+            updateCenterHighlight();
+
+            window.clearTimeout(isScrolling);
+            isScrolling = setTimeout(function() {
+              snapToCenter(videoListRow);
+            }, 150);
+          };
+
+          if (videoListRow._scrollHandler) {
+            videoListRow.removeEventListener('scroll', videoListRow._scrollHandler);
+          }
+          videoListRow._scrollHandler = handleScroll;
+          videoListRow.addEventListener('scroll', handleScroll);
+          
+          videoListRow.addEventListener('touchend', () => {
+            setTimeout(() => snapToCenter(videoListRow), 50);
+          }, { passive: true });
+
+          infiniteScrollActive = true;
+          reinitLazyVideoLoad();
+          bindFullscreenEventsForVideos(videoListRow);
+          updateCenterHighlight();
+        }, 150);
+      }
+
       function moveVideosOnMobile() {
         if (isVideoFullscreen) return;
         const videoOverlay = $('.carousel-item .video-overlay').first();
@@ -1258,134 +1850,51 @@
         const hi88RomaDiv = $('main').find('div').has('img[src*="Hi88androma.png"]').first();
         
         if (window.innerWidth <= 767) {
-          // Chỉ di chuyển nếu chưa di chuyển
-          if (videoOverlay.length && videoOverlay.parent().hasClass('position-relative')) {
-            // Tạo wrapper mới sau Hi88androma.png
-            if ($('.video-mobile-container').length === 0 && hi88RomaDiv.length) {
-              const wrapper = $('<div class="video-mobile-container"></div>');
-              hi88RomaDiv.after(wrapper);
-              wrapper.append(videoOverlay.clone());
-              wrapper.append(videoListRow.clone());
-              bindFullscreenEventsForVideos(wrapper[0]);
-              videoOverlay.hide();
-              videoListRow.hide();
-              setTimeout(bindCenterHighlight, 50);
-            }
+          if ($('.video-mobile-container').length === 0 && hi88RomaDiv.length) {
+            const wrapper = $('<div class="video-mobile-container"></div>');
+            hi88RomaDiv.after(wrapper);
+            wrapper.append(videoOverlay.clone().show());
+            wrapper.append(videoListRow.clone().show());
+            
+            videoOverlay.hide();
+            videoListRow.hide();
+            setTimeout(initInfiniteScroll, 200);
           }
         } else {
-          // Desktop: hiển thị lại video trong banner và xóa wrapper mobile
           $('.video-mobile-container').remove();
           videoOverlay.show();
           videoListRow.show();
+          infiniteScrollActive = false;
         }
       }
-      
-      // Chạy khi load và resize
+
       moveVideosOnMobile();
+
+      let resizeTimer;
+      let lastWidth = window.innerWidth; // Lưu lại chiều rộng cũ
+
       $(window).on('resize', function() {
-        if (isVideoFullscreen) return;
-        setTimeout(moveVideosOnMobile, 100);
-        setTimeout(bindCenterHighlight, 120);
-      });
-      
-      // Infinite scroll cho 4 video - chỉ ở màn hình ≤ 767px
-      function initInfiniteScroll() {
-        // Chỉ chạy khi màn hình ≤ 767px
-        if (window.innerWidth > 767) {
-          // Xóa các clone nếu có (khi resize từ mobile lên desktop)
-          const videoListRow = document.querySelector('.carousel-item .video-list-row');
-          if (videoListRow) {
-            const items = videoListRow.querySelectorAll('.video-list-item');
-            if (items.length > 4) {
-              // Xóa các clone
-              for (let i = 4; i < items.length; i++) {
-                items[i].remove();
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          if (!isVideoFullscreen) {
+            const currentWidth = window.innerWidth;
+            const isMobile = currentWidth <= 767;
+            const hasContainer = $('.video-mobile-container').length > 0;
+            
+            // Chỉ xử lý nếu chiều rộng thay đổi thực sự (tránh lỗi thanh địa chỉ mobile)
+            if (currentWidth !== lastWidth) {
+              lastWidth = currentWidth; // Cập nhật chiều rộng mới
+              
+              if (isMobile !== hasContainer) {
+                moveVideosOnMobile();
+              } else if (isMobile) {
+                // Nếu vẫn là mobile nhưng xoay màn hình, chỉ cập nhật highlight, không reset vị trí
+                updateCenterHighlight();
+                // snapToCenter(document.querySelector('.video-mobile-container .video-list-row'));
               }
             }
-            // Reset scroll về đầu
-            videoListRow.scrollLeft = 0;
           }
-          return;
-        }
-        if (isVideoFullscreen) return;
-        
-        // Tìm video-list-row trong banner hoặc trong mobile container
-        let videoListRow = document.querySelector('.video-mobile-container .video-list-row');
-        if (!videoListRow) {
-          videoListRow = document.querySelector('.carousel-item .video-list-row');
-        }
-        if (!videoListRow) return;
-        
-        // Xóa các clone cũ nếu có
-        const allItems = videoListRow.querySelectorAll('.video-list-item');
-        if (allItems.length > 4) {
-          for (let i = 4; i < allItems.length; i++) {
-            allItems[i].remove();
-          }
-        }
-        
-        // Nhân đôi các video items để tạo infinite scroll
-        const items = videoListRow.querySelectorAll('.video-list-item');
-        if (items.length > 0 && items.length === 4) {
-          items.forEach(item => {
-            const clone = item.cloneNode(true);
-            videoListRow.appendChild(clone);
-          });
-        }
-        bindFullscreenEventsForVideos(videoListRow);
-        
-        // Tính toán vị trí reset (nửa chừng của scroll width)
-        function handleScroll() {
-          const scrollWidth = videoListRow.scrollWidth;
-          const clientWidth = videoListRow.clientWidth;
-          const maxScroll = scrollWidth - clientWidth;
-          const resetPoint = maxScroll / 2;
-          
-          // Khi scroll đến reset point, quay lại đầu một cách mượt mà
-          if (videoListRow.scrollLeft >= resetPoint) {
-            videoListRow.scrollLeft = videoListRow.scrollLeft - resetPoint;
-          }
-          // Khi scroll về đầu (scrollLeft < 0 hoặc gần 0), nhảy đến reset point
-          else if (videoListRow.scrollLeft <= 0) {
-            videoListRow.scrollLeft = resetPoint;
-          }
-        }
-        
-        // Xóa event listener cũ nếu có
-        videoListRow.removeEventListener('scroll', handleScroll);
-        // Lắng nghe sự kiện scroll
-        videoListRow.addEventListener('scroll', handleScroll);
-        
-        // Khởi tạo vị trí ban đầu ở giữa để có thể scroll cả 2 chiều
-        setTimeout(() => {
-          const scrollWidth = videoListRow.scrollWidth;
-          const clientWidth = videoListRow.clientWidth;
-          const maxScroll = scrollWidth - clientWidth;
-          if (maxScroll > 0) {
-            videoListRow.scrollLeft = maxScroll / 2;
-          }
-        }, 100);
-
-        // Bind highlight center sau khi clone
-        setTimeout(bindCenterHighlight, 80);
-      }
-      
-      // Chạy lần đầu
-      setTimeout(() => {
-        initInfiniteScroll();
-      }, 200);
-      
-      // Re-init khi resize
-      let resizeTimeout;
-      window.addEventListener('resize', () => {
-        if (isVideoFullscreen) return;
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-          moveVideosOnMobile();
-          setTimeout(() => {
-            initInfiniteScroll();
-          }, 200);
-        }, 300);
+        }, 250);
       });
     });
   </script>
